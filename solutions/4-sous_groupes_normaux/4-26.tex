@@ -1,0 +1,14 @@
+%%% Exercice 4.26
+%% PA Sallard
+
+\begin{enumerate}
+    \item Par l'absurde, supposons que $H \not\subset N$. En notant $\pi$ la projection canonique de $G$ sur $\grq{G}{N},~ \pi(H) $ n'est pas réduit à $\cl{e}$ donc 
+    il existe $x\in H$ tq $\pi(x) \neq \cl{e}$. D'une part, $\ordre(x)$ divise $\ordre(H) = s$ ; et d'autre part, $\ordre(\cl{x})$ divise $\ordre(\grq{G}{N}) = r$. 
+    Mais d'après l'exercice 4.15, $\ordre(x) = \ordre(\cl{x})$ : donc $\ordre(x)$ est un diviseur commun à $r$ et $s$, qui sont premiers entre eux. Donc $\ordre(x) = 1$, ce qui 
+    signifie que $x=e$. Ceci contredit l'hypothèse que $\pi(x) \neq \cl{e}$ : d'où $H \subset N$. 
+
+    \item Puisque $N \normal G$, l'ensemble $HN$ forme un sous-groupe de $G$ (proposition 4.18), et $N \normal HN$. Avec l'indication du texte, 
+    on vérifie les hypothèses de l'exercice 2, chap. II, question 1, appliqué au groupe $G' = HN$. L'indice $[G':H]$ est bien fini (car $G'\subset G$ et $[G:H]$ est fini par hypothèse) donc 
+    on a donc l'égalité $[N:N\cap H] = [HN:H]$. Or d'une part $[N:N\cap H]$ divise $\ordre(N) = n$ ; et d'autre part, la formule des indices (théorème 2.18) $[G:H] = [G:HN] [HN:H]$ indique que $[HN:H]$
+    est un diviseur de $[G:H] = m$. Il vient donc que $[N:N\cap H]$ est un diviseur commun à $n$ et $m$ qui sont premiers entre eux. Donc $[N:N\cap H] = 1$, ce qui n'est possible que si $N\subset H$. 
+\end{enumerate}

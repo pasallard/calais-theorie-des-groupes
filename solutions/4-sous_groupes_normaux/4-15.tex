@@ -1,0 +1,16 @@
+%%% Exercice 4.15
+%% PA Sallard
+
+\begin{enumerate}
+
+  \item Soit $x\in G$ tq $\ordre(x) = n$.
+    Notons $d= \ordre(\cl{x})$ : $x^n = e \implies \cl{x^n}=\cl{x}^n=\cl{e} \implies d$ divise $n$. Puisque $\cl{x}^d = \cl{e}$, on a $\forall h\in H,~ x^d h^d = e$ d'où $x^d \in H$. 
+    Le sous-groupe $H$ étant d'ordre $m$, il vient que $x^{dm} = e$ donc que $n$ divise $dm$. 
+    Mais d'après le théorème de Gauss, $m\wedge n = 1 \implies n$ divise $d$. D'où $d=n$, \emph{i.e.} $\ordre(\cl{x}) = n$.
+ \item Soit $x\in G$ tq $\ordre(\cl{x}) = n$. En notant $\pi$ la projection canonique de $G$ sur $\grq{G}{H}$, $\pi(x)^n = \pi(x^n) = \cl{e} \implies x^n \in \Ker (\pi) = H$. 
+ Et $H$ étant d'ordre fini $m$, il vient que $x^{nm} = e$ : ainsi l'ordre de $x$ est fini (et divise $nm$).
+
+ Si on avait $\ordre(x)\neq n$, on aurait une contradiction avec le résultat précédent. Donc nécessairement $\ordre(x) =n$.
+
+\end{enumerate}
+
