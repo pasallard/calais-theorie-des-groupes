@@ -1,0 +1,22 @@
+%%% Exercice 4.16
+%% PA Sallard
+
+Selon l'indication de l'énoncé, on montre par récurrence forte sur $n>1$ la propriété $\mathcal{P}_n$ : pour tout groupe abélien $G$ d'ordre fini $n$ et pour tout diviseur 
+premier $p$ de $n$, il existe un élément de $G$ d'ordre $p$.
+
+L'initialisation pour $n = 2$ est triviale.
+
+Soit alors $n\geq 3$ et on suppose que, pour tout $k\in \ivc{2}{n-1}\cap \N,~ \mathcal{P}_k$ est vérifiée. Soit $G$ un groupe abélien d'ordre $n$ et $p$ un diviseur premier 
+de $n$.
+\begin{itemize}
+  \item Si $G$ n'admet pas de sous-groupe propre : alors $G$ est simple. Or les seuls groupes simples abéliens sont les groupes cycliques d'ordre premier (proposition 4.9).
+   Cela signifie que $n$ est premier (\emph{i.e} que $n=p$ ) et, étant cyclique, $G$ est engendré par un élément d'ordre $n=p$. Donc $\mathcal{P}_n$ est vérifiée.
+  \item Si $G$ admet un sous-groupe propre $H$, alors $H \normal G$ (car $G$ est abélien) et $p$ divise $\ordre(G) = \ordre(H)\times \ordre(\grq{G}{H})$ donc il divise au moins l'un de ces deux facteurs. On fait un nouvelle distinction de cas :
+  \begin{itemize}
+    \item Si $p$ divise $\ordre(H)$, on applique la propriété à $H$, ce qui donne immédiatement le résultat. 
+    \item Si $p$ divise $\ordre(\grq{G}{H})$, on applique la propriété à $\grq{G}{H}$, ce qui donne l'existence d'un élément $\cl{x} \in \grq{G}{H}$ d'ordre $p$. Puis le résultat de l'exercice 4-15.b 
+    donne l'existence de $y\in \cl{x}\subset G$ d'ordre $p$. 
+  \end{itemize} 
+  Dans ces deux cas, la propriété $\mathcal{P}_n$ est vérifiée.
+\end{itemize}
+L'hérédité est donc démontrée, et la récurrence est concluante.
