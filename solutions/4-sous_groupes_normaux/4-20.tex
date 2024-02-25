@@ -1,0 +1,20 @@
+%%% Exercice 4.20, Pierre-Alain Sallard
+On sait que $D_n = \Gr{a}\Gr{b}$, \emph{i.e.} que les éléments de $D_n$ sont de la forme $a^j$ ou $a^jb$, avec $ba^j = a^{n-j}b$.
+
+
+\begin{enumerate}
+    \item Soit $z\in \ZG(D_n) \setminus \{e\}$ : alors $\exists k\in \ivc{1}{n-1}\cap \N,~ z = a^k$ ou $z=a^kb$. Puisque $z$ commute avec $b$, on 
+     montre dans les deux cas que cela induit que $a^n = a^{2k}$, donc que $n=2k$ est pair. Réciproquement, si $n=2k$ est pair, on établit que $a^k$ commute avec 
+     tout élément de $D_n$. Ainsi, si $n$ est pair de la forme $n=2k,~ \ZG(D_n) = \{e, a^k\}$ et si $n$ est impair, $\ZG(D_n) = \{e\}$.
+     \item Ici, $n$ est pair avec $n= 2k$. Étant donné $i \in \ivc{0}{k-1}\cap \N$, la classe d'équivalence de $a^i$ modulo $\ZG(D_{2k})=\{e, a^k\}$ 
+     est $\{a^i, a^{i+k}\}$ et celle de $a^ib$ est $\{a^ib, a^{n-(k-i)}b\}$. Il apparaît ainsi que $\grq{D_{2k}}{\ZG(D_{2k})}$ est le groupe 
+     $\Gr{\cl{a}}\Gr{\cl{b}}$, avec $\ordre(\cl{a}) = k,~ \ordre(\cl{b})=\ordre(\cl{a}\cl{b}) =2$. Ce groupe est isomorphe à $D_k$ (proposition 3.74), d'où le résultat.
+     \item On a toujours $\Gamma_n \normal D_n$, donc notamment pour tout entier $p$ premier, $\Gamma_p \normal D_p$. 
+     
+     Soit maintenant $N\subset D_p$ distinct de $\{e\}$ tel que $N\normal D_p$. L'ordre de $N$ divise $2p$ donc soit $\ordre(N)=p$ soit $\ordre(N)=2$. 
+     Dans le premier cas, si $\ordre(N)=p$, la proposition 3.9 assure que $N$ est un sous-groupe cyclique : or le seul sous-groupe cyclique d'ordre $p$ de $D_p$ est $\Gamma_p$, donc 
+     $N=\Gamma_p$. Dans le second cas, il existerait un élément d'ordre 2 qui engendre $N$, \emph{i.e.} $\exists j\in \ivc{1}{p-1}\cap \N$ tq $N=\{e, a^jb\}$. Puisque $N\normal D_p,~ bNb^{-1} = N$ implique 
+     $b(a^jb)b = ba^j = a^{p-j}b \in \{e, a^jb\}$ ce qui est impossible (car $p$ premier et $j<p$). 
+
+     Il n'y a donc qu'un seul seul-groupe propre normal dans $D_p$, qui est $\Gamma_p$.
+    \end{enumerate}
