@@ -1,0 +1,11 @@
+%  exercice 4.24 - P.A. Sallard
+
+Rappel : $N_G(S)$ est le sous-groupe formés des éléments de $G$ pour lesquels $S$ est conjugué avec lui-même :  $N_G(S) = \{g\in G,~ gSg^{-1} = S\}$.
+
+\begin{enumerate}
+ \item Par l'absurde, on suppose que $i\neq j$ et que $x_iSx_i^{-1} = x_jSx_j^{-1}$. Alors $x_j^{-1}x_iS\underbrace{x_i^{-1}x_j}_{=(x_j^{-1}x_i)^{-1}} = x_j^{-1}x_jSx_j^{-1}x_j = S$ donc $x_j^{-1}x_i \in N = N_G(S)$. Il existe alors $n\in N$ tq $x_i = x_jn$, ce qui implique que $x_i$ et $x_j$ sont dans la même classe à gauche modulo $N$. Mais par construction la famille des $(x_i)_{i\in I}$ forme une famille de représentants de classes modulo N distinctes : d'où la contradiction.
+
+ \item Il est clair que, pour tout $i\in I,~ x_iSx_i^{-1}$ est un élément de la classe de conjugaison de $S$.
+
+ Réciproquement, considérons une partie $gSg^{-1}$ (pour un certain $g \in G$) conjuguée à $S$. Par construction de la famille  $(x_i)_{i\in I}$, il existe $i\in I$ tq $g \in x_iN$, \emph{i.e.} $g = x_i n$ pour un certain $n\in N$. Mais alors $gSg^{-1} = x_i n S (x_i n)^{-1} = x_i \left(n Sn^{-1}\right) x_i^{-1} = x_i S x_i^{-1}$ (par définition de $N$). Donc une partie conjuguée à $S$ est nécessairement de la forme $x_i S x_i^{-1}$. CQFD.
+\end{enumerate}
