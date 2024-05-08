@@ -1,0 +1,9 @@
+% Pierre-Alain Sallard
+\begin{enumerate}
+ \item Par récurrence sur $n\geqslant 2$, l'initialisation avec $n=2$ étant donnée par la proposition (1.47). On considère donc $n>2$ : on suppose que la propriété est vérifiée au rang $n-1$ et on se donne $H_1,\ldots, H_n$ vérifiant les hypothèses de l'énoncé. Notons $F = H_1\ldots H_{n-1}$ : par hypothèse de récurrence, $F$ est un sous-groupe de $G$. On va établir que $FH_n = H_nF$, ce qui fournira le résultat attendu grâce à la proposition (1.47).
+
+  Soit alors $z\in FH_n :~ \exists x\in F, y_n\in H_n$ tel que $z= xy_n$. Or par définition de $F$, $x = x_1\ldots x_{n-1} \in H_1\ldots H_{n-1}$. Puisque $H_{n-1}H_n$ est par hypothèse un sous-groupe, on a par la proposition (1.47) $H_{n-1}H_n = H_nH_{n-1}$ donc $x_{n-1} y_n = y'_n x'_{n-1} \in H_nH_{n-1}$. On réitère le processus pour aboutir à $z = \tilde{y}_n x'_1\ldots x'_{n-1} \in H_n F$ : ainsi $FH_n \subset H_n F$. L'inclusion réciproque s'établit de manière identique et on conclut à une propriété vraie au rang $n$. CQFD.
+
+\item Une preuve rigoureuse de cette proposition nécessite une formalisation lourde et pénible : on ne la traite pas ici.
+\end{enumerate}
+

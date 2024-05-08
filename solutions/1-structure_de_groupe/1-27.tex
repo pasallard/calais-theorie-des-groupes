@@ -1,0 +1,38 @@
+% Pierre-Alain Sallard
+\begin{enumerate}
+ \item Il s'agit de prouver que toute homographie est une bijection de $\tilde{\C}$ dans lui-même. Soit $f$ une telle homographie, associée à $(a,b,c,d)\in \C^4$ tel que $ad-bc\neq 0$. Si $c=0$, $f$ est affine et c'est bien une bijection. On suppose maintenant que $c\neq 0$ et on prend $w\in \tilde{\C}$.
+ \begin{itemize}
+  \item Si $w\in \{\frac{a}{c}, \infty\},~ w$ a un antécédent unique par $f$ d'après la définition même de $f$.
+  \item Sinon, $f(z) = w\iff z = \frac{dw-b}{-cw + a}$, ce qui montre là-aussi l'existence et l'unicité d'un antécédent de $w$ par $f$.
+ \end{itemize}
+On peut donc conclure que $f$ est une permutation de  $\tilde{\C}$.
+
+\item On vient d'établir que $\mathcal{H} \subset S_{\tilde{\C}}$ et il faut vérifier les axiomes de sous-groupe :
+\begin{itemize}
+ \item pour $f,g\in \mathcal{H}$, on montre que $f\circ g \in \mathcal{H} $ en donnant l'expression algébrique de $(f\circ g)(z)$ ;
+ \item et la résolution de l'équation $f(z) =w$ d'inconnue $z$ faite ci-dessus montre que $f^{-1} \in \mathcal{H}$, car son expression est $f^{-1}(z) = \frac{dz-b}{-cz + a}$.
+\end{itemize}
+
+\item Les similitudes et les translations sont des transformations du plan associées aux applications de la forme $z\mapsto \alpha z + \beta$ (avec $\alpha, \beta \in \C$) : ce sont donc des homographies, avec le cas particulier $c=0$.
+
+\item L'inversion $v$ de centre $O$ et de puissance 1 est l'application qui à un point $M(z)$ associe le point $M'(z')$ tel que $\begin{cases} M' \in (OM)\\ \overline{OM'}\times \overline{OM} = 1\end{cases} $, ce qui fournit que $z' = \frac{z}{z\overline{z}} = \frac{1}{\overline{z}}$. Et la symétrie $s$ d'axe $(Ox)$ est évidemment l'application $M(z) \mapsto M'(z')$ telle que $z' = \overline{z}$.
+
+Il est donc clair que l'homographie $z\mapsto\frac{1}{z}$ est le produit commutatif de l'inversion $v$ et de la symétrie $s$.
+
+\item On dresse la table de Cayley du sous-ensemble $\{f_1=e, f_2,f_3, f_4\}$, ce qui montre à la fois que c'est un sous-groupe et qu'il est isomorphe au groupe de Klein :
+
+\begin{center}
+  \begin{tabular}{c|cccc}
+    $\circ$    &      $e$ &      $f_2$  & $f_3$  &    $f_4$   \\
+    \midrule
+            $e$ &      $e$ &      $f_2$ & $f_3$ &    $f_4$  \\
+            $f_2$ &   $f_2$ & $e$ &    $f_4$ &    $f_3$  \\
+            $f_3$ & $f_3$ &      $f_4$ &      $e$ &    $f_2$  \\
+            $f_4$ &    $f_4$ &    $f_3$ &    $f_2$ &      $e$  \\
+
+  \end{tabular}
+\end{center}
+
+\item On traite de la même manière la dernière question.
+\end{enumerate}
+
