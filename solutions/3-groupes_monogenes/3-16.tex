@@ -1,0 +1,26 @@
+%%% Exercice 3.16
+%%% PA Sallard
+
+\begin{enumerate}
+ \item Puisque $(p^2,p)\neq 1$, le corrolaire (3.30) assure que $G$ n'est pas cyclique : il n'y aura donc pas d'élément d'ordre $p^3$. Les seuls ordres possibles pour un élément de $G$ distinct du neutre (0,0) sont donc $p$ et $p^2$.
+ 
+ Par ailleurs, on sait que
+ \begin{itemize}
+  \item dans $\grq{\Z}{p\Z}$, les $p-1$ éléments non nuls sont d'ordre $p$ ;
+  \item dans $\grq{\Z}{p^2\Z}$, les éléments non nuls d'ordre $p^2$ sont les $k$ tels que $(p^2,k) = 1$ et les autres, c'est-à-dire $p$ et ses multiples, sont d'ordre $p$ ; il y a ainsi $p-1$ éléments d'ordre $p$ et $p^2-p = p(p-1)$ éléments d'ordre $p^2$.
+ \end{itemize}
+
+ Puisque $\forall (a,b)\in G, \ordre\left((a,b)\right) = p \iff \underbrace{(\ordre(a) = p \text{ et } b=0)}_{p-1 \text{ éléments possibles}}$ ou  $(\underbrace{a = 0 \text{ et } \ordre(b)=p)}_{p-1 \text{ éléments possibles}}$ ou $\underbrace{(\ordre(a) = p \text{ et } \ordre(b)=p)}_{(p-1)^2 \text{ éléments possibles}}$. Ainsi, il y a $2(p-1)+(p-1)^2 = p^2-1$ éléments d'ordre $p$.
+ 
+ Et les autres éléments non nuls de $G$, au nombre de $p^3 - 1 - (p^2-1) = p^2(p-1)$, sont nécessairement d'ordre $p^2$.
+ 
+ \item $\bullet$ On commence par dénombrer les sous-groupes de $G$ d'ordre $p$. Soit $H$ un tel sous-groupe : puisque $p$ est premier, $H$ est cyclique (proposition 3.9), donc isomorphe à $\grq{\Z}{p\Z}$ (corrolaire 3.4), dans lequel tous les éléments non nuls sont d'ordre $p$. Ainsi, les éléments non nuls de $H$ font partie des $p^2-1$ éléments de $G$ d'ordre $p$. On voit alors qu'on peut partitionner cet ensemble des $p^2-1$ éléments d'ordre $p$ en $\frac{p^2-1}{p-1}= p+1$ sous-ensembles qui, en leur ajoutant le neutre (0,0), constituent des sous-groupes de $G$ d'ordre $p$. \textit{Remarque} : les $p+1$ sous-groupes d'ordre $p$ sont $\Gr{(0,1)}$ et tous les $\Gr{(p,k)}$, pour $k\in \{0,\ldots, p-1\}$.
+ 
+ $\bullet$ Dénombrons maintenant les sous-groupes de $G$ d'ordre $p^2$ en considérant $H$ un tel sous-groupe et en distinguant deux cas selon que $H$ est monogène ou pas. Si $H$ est monogène, on applique le même raisonnement : il est isomorphe à $\grq{\Z}{p^2\Z}$, qui compte $p(p-1)$ générateurs parmi les $p^2(p-1)$ éléments d'ordre $p^2$ de $G$. Cela fait donc $\frac{p^2(p-1)}{p(p-1)} = p$ façons possibles de constituer $H$. \textit{Remarque} : ces $p$ sous-groupes monogènes d'ordre $p^2$ sont $\Gr{ (1,k)}$ pour $k\in \{0,\ldots, p-1\}$.
+ 
+ Et si $H$ n'est pas monogène, tout élément non nul de $H$ est alors d'ordre $p$ : or il n'y a que $p^2-1 = \card{H\setminus \{0\}}$ tels éléments dans $G$ donc $H$ est forcément composé de tous ces éléments et du neutre (0,0). On vérifie sans difficulté que cette réunion d'éléments est bien un sous-groupe. Donc il y a un, et un seul, sous-groupe non monogène d'ordre $p^2$. \textit{Remarque} : il est engendré par $\{(p,0),(0,1)\}$ et il est isomorphe à $\grq{\Z}{p\Z}\times \grq{\Z}{p\Z}$.
+ 
+ Et au total, il y a donc $p+1$ sous-groupes d'ordre $p^2$, soit autant que de sous-groupes d'ordre $p$.
+\end{enumerate}
+
+

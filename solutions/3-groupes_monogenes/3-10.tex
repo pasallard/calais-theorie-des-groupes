@@ -1,0 +1,14 @@
+%Pierre-Alain Sallard
+\begin{enumerate}
+  \item On vérifie trivialement que $f$ est un endomorphisme de $C_n$, grâce notamment au fait qu'un groupe cyclique est abélien.
+  Puis $a\in \ker f \iff a^r = e \iff \ordre(a)$ divise $r$ (c'est bien une équivalence  : voir la proposition 3.6), d'où la caractérisation de $\ker f$.
+  
+  Puisque $x$ engendre $C_n,~ \forall a\in C_n, \exists p_a\in \N,~ a = x^{p_a}$. Et $a\in \ker f \implies x^{p_a r} = e \implies \exists k\in \N^*,~ p_a r = k n$ (car $x\neq e$ est d'ordre $n$) $=krs\implies p_a = ks \implies a = x^{ks}$. D'où le résultat attendu.
+  
+  On a alors $\ker f \subset \langle x^s\rangle$ et l'inclusion réciproque vient facilement : ainsi, $\ker f = \langle x^s\rangle$ est d'ordre $\frac{n}{s} = r$ (théorème 3.14).
+  
+  Enfin, le 1er théorème d'isomorphisme (théorème 2.27) donne que $\im f \iso \grq{C_n}{\ker f}$ a pour ordre $\left[C_n : \ker f \right] = \frac{n}{r} = s$ (proposition 2.15).
+  
+  \item \emph{(on va procéder plus rapidement que ce qui est proposé dans l'énoncé).} Par une démarche identique à celle de la question 1, on déduit que l'ordre de $\im h$ vaut $r$. Et puisque l'inclusion $\im h \subset \ker f$ est triviale, il vient que ces deux ensembles sont égaux puisque de même ordre.
+  
+\end{enumerate}

@@ -1,41 +1,12 @@
 \begin{enumerate}
   \item
-    \emph{Existence.} 
-    Elle résulte immédiatement de l'exercice~5 et de l'égalité $x^n = x^k$ pour tout $n\in\Z$ où $k\in\set{0,1}$ tel que $n\equiv k\pmod{2}$.
+    On reprend l'application $\varphi$ de l'exercice 5, dont on sait déjà qu'elle est surjective. On note que la minimalité de $\set{a_1,a_2,\dots,a_r}$ implique que $a_i \neq e$ pour tout $i$, donc chaque élément $a_i$ est d'ordre~2.
     
-    \emph{Unicité.}
-    Supposons qu'il n'y a pas unicité. 
-    Il existe donc deux $r$-uplets distincts $(k_1,k_2,\dots,k_r)\in\set{0,1}^r$ et $(l_1,l_2,\dots,l_r)\in\set{0,1}^r$ tels que
-    \[
-      a_1^{k_1} a_2^{k_2} \dots a_r^{k_r} = a_1^{l_1} a_2^{l_2} \dots a_r^{l_r}.
-    \]
-    Soit $j\in\set{1,2,\dots,r}$ tel que $k_j\neq l_j$. 
-    On a donc
-    \[
-      a_j = 
-        \begin{dcases}
-          \prod_{i=1,i\neq j}^r a_i^{l_i - k_i} & \text{si $k_j - l_j = 1$} \\
-          \prod_{i=1,i\neq j}^r a_i^{k_i - l_i} & \text{si $k_j - l_j = -1$}.
-        \end{dcases}
-    \]
-    Nous en déduisons que $\set{a_1,a_2,\dots,a_r}\setminus\set{a_j}$ est une famille génératrice de $G$ ce qui contredit la minimalité de $\set{a_1,a_2,\dots,a_r}$.
+    \emph{Existence.} 
+    Avec les notation de l'exercice 5, chaque $x_i$ de $\Gr{a_i}$ s'écrit $a_i^{k_i}$ avec $k_i \in \{0,1\}$ puisque $o(a_i) = 2$. D'où l'existence de l'écriture recherchée.
+    
+    \emph{Unicité.} On va montrer que $\varphi$ est injective. On montre aisément que c'est un morphisme de groupes donc il suffit d'étudier son noyau. Soit $y=(a_1^{k_1},\ldots, a_r^{k_r}) \in \Ker \varphi$. Puisque $a_1^{k_1}\times \cdots \times a_r^{k_r} = e$ et que $a_1$ est d'ordre 2, il vient que $a_2^{k_2}\times \cdots \times a_r^{k_r}= a_1^{k_1}$. Si on avait $k_1=1$, alors $a_1$ appartiendrait au groupe engendré par la famille $(a_2, \ldots, a_r)$, ce qui contredirait l'hypothèse de minimalité de la famille génératrice de $G$. Donc $k_1 = 0$. Et on répète cet argument pour tous les autres $k_i$ (car $G$ est abélien), et il vient que $y = a_1^0\times\cdots\times a_r^0 = e$. Ainsi $\varphi$ est bien injective, ce qui fournit l'unicité de l'écriture recherchée.
   
   \item
-     L'application $\varphi\from\Gr{a_1}\times\Gr{a_2}\times\dots\times\Gr{a_r}\to G$ définie par 
-     \[
-       \varphi(x_1,x_2,\dots,x_r) = x_1x_2\dots x_r
-     \]
-     est un homomorphisme de groupes; en effet, pour tout $(x_1,x_2,\dots,x_r)\in\Gr{a_1}\times\Gr{a_2}\times\dots\times\Gr{a_r}$ et $(y_1,y_2,\dots,y_r)\in\Gr{a_1}\times\Gr{a_2}\times\dots\times\Gr{a_r}$, on a
-     %
-     \begin{align*}
-       \varphi((x_1,x_2,\dots,x_r)(y_1,y_2,\dots,y_r))
-       &= \varphi(x_1y_1,x_2y_2,\dots,x_ry_r) \\
-       &= x_1y_1x_2y_2\dots x_ry_r \\
-       &= (x_1x_2\dots x_r)(y_1y_2\dots y_r) \\
-       &= \varphi(x_1,x_2,\dots,x_r)\varphi(y_1,y_2,\dots,y_r).
-     \end{align*}
-     %
-     Cette homomorphisme est bijective d'après la question précédente. 
-     De plus, la minimalité de $\set{a_1,a_2,\dots,a_r}$ implique que $a_i \neq e$ pour tout $i$, donc chaque élément $a_i$ est d'ordre~2, c'est-à-dire $\Gr{a_i}\iso C_2$.
-     Nous en déduisons que $G$ est isomorphe à $C_2^r$ et concluons que le groupe $G$ est d'ordre $2^r$.
+     Puisque chaque élément $a_i$ est d'ordre~2, on a $\Gr{a_i}\iso C_2$. Et $\varphi$ est un isomorphisme de groupes d'après la question précédente : nous en déduisons que $G$ est isomorphe à $C_2^r$ et concluons que le groupe $G$ est d'ordre $2^r$.
 \end{enumerate}

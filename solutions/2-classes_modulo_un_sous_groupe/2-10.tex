@@ -1,0 +1,24 @@
+% Pierre-Alain Sallard
+\begin{enumerate}
+ \item Remarque : d'après l'exercice 5, les classes doubles de G modulo H sont des classes d'équivalence.
+
+ Par hypothèse, il y a un nombre fini, noté $r$, de classes (simples) à droite modulo $H$ : notons $(g_i)_{1\leqslant i \leqslant r}$ une famille de représentants de ces classes à droite. On a clairement l'inclusion $\bigcup_{i=1}^r Hg_iH \subset G$ et l'inclusion réciproque vient du fait que $\forall i,~ Hg_i \subset Hg_iH \implies G = \bigcup_{i=1}^r Hg_i$ (partition en classes simples) $\subset \bigcup_{i=1}^r Hg_iH$.
+ Ceci montre qu'il y a donc au plus $r$ classes doubles modulo H.
+
+ \emph{Attention, cela ne montre pas qu'il y a exactement $r$ classes doubles, ni que les classes doubles $HgH$ coïncident avec les classes simples $Hg$ : on a uniquement l'inclusion $Hg \subset HgH$. }
+
+ \item $\bullet$ On commence par justifier l'existence de $p$ : ceci résulte de i) le théoèreme de Poincaré (théorème 2.17) qui assure que l'intersection de sous-groupes d'indices finis est lui-même un sous-groupe d'indice fini ; ii) du fait que $g^{-1}Hg$ est d'indice fini dans $G$ d'après l'exercice 9 car $H$ est lui-même d'indice fini dans $G$ ; iii) du fait que $K := H \cap g^{-1}Hg$ est alors d'indice fini dans $G$ et donc \textit{a fortiori} dans $H$.
+ 
+ Notons alors $(x_i)_{1\leqslant i \leqslant p}$ une famille de représentants des classes à droite de $H$ modulo $K$, de sorte que $H = \bigcup_{i=1}^p Kx_i$ (union disjointe). En multipliant à gauche par $g$ puis $H$, il vient que $HgH =  \bigcup_{i=1}^p HgKx_i$. Or $K\subset g^{-1}Hg \implies gK \subset Hg \implies HgKx_i \subset H(Hg)x_i = Hgx_i$, d'où $HgH \subset  \bigcup_{i=1}^p Hgx_i$. L'inclusion réciproque est triviale puisque $\forall i,~ x_i \in H$. On a donc bien l'égalité $HgH =  \bigcup_{i=1}^p Hgx_i$.
+ 
+ Enfin, on montre par l'absurde que, si $i\neq j$, alors $Hgx_i \cap Hgx_j = \emptyset$ en supposant l'existence de $h_i, h_j \in H$ tels que $h_igx_i = h_jgx_j$. On aurait alors $x_i = \underbrace{g^{-1}(h_i^{-1}h_j) g}_{:=y} x_j$, avec $y\in  g^{-1}Hg$. Mais cette même égalité donne aussi $y = x_ix_j^{-1} \in H$, donc $y \in H\cap g^{-1}Hg$. Ainsi $x_i$ appartiendrait à la classe à droite de $x_j$ modulo $K$, ce qui est exclut par definition de la famille $(x_i)$. CQFD.
+ 
+ $\bullet$ On aurait obtenu le résultat  $HgH =  \bigcup_{i=1}^p y_igH$ en procédant de la même manière avec des représentants $(y_i)$ de classes à gauche de $H$ modulo $K$ puis en multipliant à droite par $g$ puis $H$ (sans faire appel à l'exercice 9, mais qu'on a utilisé plus haut).
+ 
+ $\bullet$ Avec la définition $z_i = y_igx_i$, il vient que $Hz_i = (Hy_i) gx_i = Hgx_i$ (car $\forall i,~ y_i\in H$ et par bijectivité de la translation $h\in H \mapsto hy_i$) et $z_iH = y_ig(x_iH) = y_igH$, d'où le résultat du texte.
+ 
+ \item $G$ est l'union disjointe de classes doubles modulo $H$ (de la forme $HgH$), qui elles-mêmes sont des unions disjointes de classes simples à droite et à gauche modulo $H$ de la forme $Hz_i$ et $z_iH$. Comme par définition il y a $r$ classes simples à droite et à gauche, cela justifie bien l'existence d'une famille $(a_i)_{1\leqslant i \leqslant r} \in G^r$ telle que $G =  \bigcup_{i=1}^r Ha_i =  \bigcup_{i=1}^r a_iH$.
+ 
+ \emph{Remarque} : on n'avait pas établi qu'il n'y a qu'un nombre fini $d$ de classes doubles, mais le raisonnement précédent le justifie. En notant $p=p_j$ l'indice de classe double de la question 2, avec $1\leqslant j\leqslant d$, on a donc la relation $r = \sum\limits_{j=1}^d p_j$.   
+\end{enumerate}
+
