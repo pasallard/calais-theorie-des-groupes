@@ -1,0 +1,74 @@
+%%% Exercice 3.20
+%%% PA Sallard
+\begin{enumerate}
+ \item $G_{p^n}$ est abélien car la multiplication dans l'anneau $\grq{\Z}{p^n\Z}$ est commutative, d'ordre $\varphi(p^n) = p^{n-1}(p-1)$ (lemme 3.35).
+ \item Le groupe $G_9$ est formé des $\cl{k}$ où $k$ est premier avec 9, donc $G_9 =\{\cl{1},\cl{2},\cl{4},\cl{5},\cl{7},\cl{8}\}$. On dresse la table de multiplication de ce groupe (en écrivant $k$ au lieu de $\cl{k}$) :
+
+ \begin{center}
+  \begin{tabular}{c|cccccc}
+    $\times$   & 1 & 2 & 4 &  5 &   7 &   8 \\
+    \midrule
+           1 & 1 & 2 & 4 &   5 &   7 &   8 \\
+    2 & 2 & 4 & 8 &   1 &   5 &   7 \\
+    4 & 4 & 8 & 7 & 2 & 1 & 5 \\
+      5 &  5 &  1 &  2 &  7 & 8 & 4 \\
+      7 & 7 &  5 &  1 & 8 & 4 & 2 \\
+      8 &   8 &   7 &  5 & 4 & 2 &  1 \\
+  \end{tabular}
+\end{center}
+On constate que 8 est d'ordre 2, que 4 et 7 sont d'ordre 3 et que 2 et 5 sont d'ordre 6 : ainsi, $G_9$ est cyclique et ses générateurs sont 2 et 5.
+
+\emph{Remarque} : on a donc $(G_9,\times) \iso \left( \grq{\Z}{6\Z}, +\right)\iso \left( \grq{\Z}{2\Z}\times\grq{\Z}{3\Z} , +\right)$.
+
+\item On a maintenant $p$ premier différent de 2.
+
+\begin{enumerate}
+ \item Soient $x,x' \in \Z$ tels que $\cl{x} = \cl{x'}$, \textit{i.e} $x\equiv x' ~[p^n]$. Il est alors immédiat que $x\equiv x' ~[p]$, \textit{i.e} $\dot{x} = \dot{x'}$ : l'application $\cl{x} \mapsto \dot{x}$ est donc bien définie. Et $p$ étant premier, on a clairement $(x,p^n)=1 \iff (x, p) = 1$. Ainsi, $\varphi$ est la restriction de l'application précédente à $G_{p^n}$, à valeurs dans $G_p$.
+
+ Le fait que ce soit un morphisme de groupes se montre classiquement (c'est juste un peu lourd en termes de notations).
+
+ \item Il est clair que $\varphi$ est surjectif donc le premier théorème d'isomorphisme donne que $\grq{G_{p^n}}{\ker \varphi} \iso G_p$. Par ailleurs, la proposition 2.15 que $\ordre(G_{p^n}) = \ordre(\ker \varphi) \times [G_{p^n}:\ker \varphi ]$. Ainsi $\ordre(\ker \varphi) = \frac{p^{n-1}(p-1)}{p-1} = p^{n-1}$.
+
+ Enfin, du fait de l'équivalence $(x,p) = 1 \iff (x, p^n) = 1$ (pas de facteur $p$ dans la décomposition de $x$), on  $\forall x\in \Z,~ \cl{x} \in \Ker \varphi \iff \dot{x} = 1 \iff x \equiv 1~ [p]$.
+
+ \item On a $\cl{y}^{p-1} = \cl{x}^{p^{n-1}(p-1)} = \cl{1}$ car l'ordre de $G_{p^n}$ est $p^{n-1}(p-1)$ : donc $d:=\ordre(\cl{y})$ divise $p-1$.
+
+ Mais $\cl{y}^{d} = \cl{1} \implies \cl{x}^{p^{n-1}d} = \cl{1} \implies \dot{x}^{p^{n-1}d} = \dot{1}$ (par application du morphisme $\varphi$) $\implies p^{n-1}d$ est un multiple de l'ordre $p-1$ de $\dot{x}$ dans $G_p)$ (générateur de $G_p$ par hypothèse). Puisque $(p-1, p) = (p-1, p^{n-1}) = 1$, le théorème de Gauss impose que $p-1$ divise $d$.
+
+ Au final, on a donc $d= p-1$, \textit{i.e.} $\cl{y}$ est d'ordre $p-1$ dans $G_{p^n}$.
+
+ \textit{Remarque} : c'est notamment ici qu'est important le fait que $p$ est impair, car alors $p-1>1$.
+\end{enumerate}
+\item \begin{enumerate}
+       \item Le début de la preuve est classique, avec la formule $p\binom{p-1}{r-1} = r\binom{p}{r}$ et le théorème de Gauss : $p$ divise $r\binom{p}{r}$ et il est premier avec $r$ donc il divise $\binom{p}{r}$. Ainsi, $\exists \lambda \in \N^*,~ \binom{p}{r} = p\lambda$.
+       Enfin, $\lambda = \frac{(p-1)!}{r!(p-r)!}$ ne peut pas être divisible par $p$ car aucun des entiers au numérateur n'est divisible par $p$. CQFD.
+
+       \item Il s'agit de montrer que $(1+p)^{p^r} = 1 + p^{r+1}\mu$, avec $(p,\mu) = 1$. On initialise pour $r=0$ (trivial, avec $\mu =1$) et on suppose la propriété vraie à un rang $r-1$, que l'on écrit $(1+p)^{p^{r-1}} = 1 + \mu p^r$. Alors
+       \begin{align*}
+        (1+p)^{p^r} &= \left((1+p)^{p^{r-1}} \right)^p = 1+ \mu^p p^{rp} + \sum\limits_{k=1}^{p-1} \binom{p}{k} \mu^k p^{rk}\\
+        & = 1+ \mu^p p^{rp} + \sum\limits_{k=1}^{p-1} p \lambda_k \mu^k p^{rk} \\
+        & = 1+ \mu^p p^{r(p-1)-1} p^{r+1} + \sum\limits_{k=1}^{p-1} \lambda_k \mu^k p^{r(k-1)}p^{r+1}\\
+        & = 1 + \mu' p^{r+1}
+       \end{align*}
+où l'entier $\mu'$, qui est de la forme $\lambda_1 \mu^1 + p\times A$, n'est pas divisible par $p$ car ni $\lambda_1$ ni $\mu$ ne le sont. La récurrence est concluante.
+\item En appliquant la propriété à $r=n-1$, il vient que $(1+p)^{p^{n-1}} = 1+ p^n\mu \equiv 1~ [p^n]$ donc $\cl{1+p}^{p^{n-1}} = \cl{1}$, d'où $\ordre(\cl{1+p})$ divise $p^{n-1}$. C'est donc un entier de la forme $p^{\alpha}$, avec $1\leqslant \alpha \leqslant n-1$.
+
+Mais on doit avoir $(1+p)^{p^{\alpha}} = 1 + p^{\alpha+1}\mu_{\alpha} \equiv 1~ [p^n]$ avec $\mu_{\alpha}\neq 0~ [p]$, \textit{i.e.} $p^{\alpha+1}\mu_{\alpha} \equiv 0~ [p^n]$, ce qui n'est possible que pour $\alpha = n-1$.
+
+Ainsi $\cl{1+p}$ est d'ordre $p^{n-1}$.
+
+      \end{enumerate}
+
+\item Dans le groupe abélien $G_{p^n}$, on a identifié un élément $\cl{y}$ d'ordre $p-1$ et l'élément $\cl{1+p}$ d'ordre $p^{n-1}$ : l'exercice 14, question b, permet d'affirmer que l'élément produit $\cl{y (1+p)}$ est d'ordre $p^{n-1}(p-1)$, qui est l'ordre de $G_{p^n}$. Ainsi, $G_{p^n}$ est cyclique.
+
+Et comme il est de même ordre que le groupe cyclique $\grq{\Z}{(p-1)\Z}\times \grq{\Z}{p^{n-1}\Z}$ (corrolaire 3.30), ces deux groupes sont isomormorphes (corollaire 3.4).
+
+\item $G_4 =\{\cl{1},\cl{3}\} \iso \grq{\Z}{2\Z}$ est clairement cyclique. Et dans $G_8 =\{\cl{1},\cl{3},\cl{5},\cl{7}\}$, tous les éléments distincts de $\cl{1}$ sont d'ordre 2 donc $G_8\iso \grq{\Z}{2\Z}\times \grq{\Z}{2\Z}$ n'est pas cyclique.
+
+Ce n'est pas demandé, mais on peut établir que $G_{16}\iso \grq{\Z}{4\Z}\times \grq{\Z}{2\Z}$ de sorte qu'on ne voit pas se dégager d'isomorphisme simple entre $G_{2^n}$ et un produit de groupes cycliques.
+
+Pour $n\geqslant 3$, puisque $x\equiv x'~ [2^n] \implies x\equiv x'~ [8]$ et que $(x,2^n) = 1 \iff (x,8)=1$, l'application $\theta\colon G_{2^n} \to G_8$ qui, à une classe $\cl{x}$ modulo $2^n$ associe la classe $\dot{x}$ modulo 8 est bien définie et, comme en question 3, c'est un morphisme surjectif. Par conséquent, $G_{2^n}$ ne peut pas être cyclique (sinon son image par $\theta$, c'est-à-dire $G_8$, serait cyclique).
+\end{enumerate}
+
+Bla
+

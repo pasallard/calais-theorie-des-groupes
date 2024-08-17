@@ -1,0 +1,21 @@
+% Pierre-Alain Sallard
+
+\begin{enumerate}
+ \item Dans cette partie, on utilise massivement le théorème 4.25 qui généralise le premier théorème d'isomorphisme : $\grq{G}{\ker f} \iso \im f$.
+ \begin{enumerate}[1)]
+  \item Soit $f\colon (\C,+)\to (\R,+)$ définie par $f(x+\I y) = y$. Alors $f$ est un morphisme surjectif dont le noyau est $\ker f =\{z\in\C,~ \im(z) = 0\} = \R$ : ainsi, $\grq{\C}{\R}\iso \R$.
+  \item On considère le morphisme $\varphi$ du texte, qui est surjectif et dont le noyau est $\ker \varphi = \{a\in \R,~ e^{2\pi\I a} = 1\} = \Z$ : ainsi $\grq{\R}{\Z} \iso \U$.
+  \item On considère le morphisme $\varphi$ du texte, qui est surjectif et dont le noyau est $\ker \varphi = \{z\in \C^*,~ z = \abs{z}\} = \R_+^*$ : ainsi $\grq{\C^*}{\R_+^*} \iso \U$.
+  \item Soit d'abord $f\colon (\C^*,\times)\to (\R_+^*,\times)$ définie par $f(z) = \abs{z}$. Alors $f$ est un morphisme surjectif dont le noyau est $\ker f =\{z\in\C^*,~ \abs{z} = 1\} = \U$ : ainsi, $\grq{\C^*}{\U}\iso \R_+^*$. Puis la restriction $g:= \restr{f}{\R_+^*}$ dont le noyau est $U_2$ donne $\grq{\R_+^*}{U_2} \iso \R_+^*$.
+  \item On prend $f\colon (\R^*,\times)\to (U_2,\times)$ définie par $f(x) = \frac{x}{\abs{x}}$, ainsi que sa restriction à $\Q^*$ pour obtenir le resultat attendu.
+  \item Idem point 4.
+ \end{enumerate}
+ \item $\bullet~$ L'ensemble $\R_+^*\times \grq{\R}{\Z}$ est muni de la loi $\star$ définie par $(\rho,\cl{\lambda}) \star (\rho ',\cl{\lambda '}) = (\rho\times \rho ', \cl{\lambda}+\cl{\lambda '})$, ce qui en fait un groupe dont le neutre est $(1,\cl{0})$. Il est alors clair que $\varphi$ est un morphisme de groupes surjectif dont le noyau est $\ker \varphi = \{z=\rho e^{2\pi \I \lambda}\in \C^*,~ \rho = 1 \text{ et } \lambda \in \Z \} = \{ z\in \C^*,~ z = 1\} = \{1\}$ : $\varphi$ est donc injectif, d'où bijectif.
+
+  $\bullet$ Ici, $\R\times \grq{\R}{\Z}$ est muni de l'addition usuelle. La fonction $\ln$ est isomorphisme de $(\R_+^*,\times)$ vers $(\R, +)$ et il en va de même de son plongement $g\colon R_+^*\times \grq{\R}{\Z} \to R\times \grq{\R}{\Z}$ défini par $g(x,\cl{\lambda}) = (\ln(x),\cl{\lambda} )$. Ainsi, $\psi = g\circ \varphi$ est aussi un isomorphisme.
+
+  \item $\bullet$ L'application $f\colon (\C,+)\to (\C^*,\times)$ définie par $f(x+\I y) = e^{\I 2\pi x} e^y$ est un morphisme surjectif (car $z = \rho e^{\I \theta}\in \C^*$ est l'image de $\frac{\theta}{2\pi}+\I \ln(\rho)$ par $f$) dont le noyau est $\ker f = \{z=x+\I y\in \C,~ e^y = 1 \text{ et } x\in \Z \} = \{x + \I\times 0,~ x\in \Z \} = \Z$ donc $(\grq{\C}{\Z},+)$ est bien isomorphe à $(C^*,\times)$.
+
+  $\bullet$ Le morphisme $\varphi\colon \C^*\to \U$ du point a)3) ci-dessus est tel que $\varphi(\R^*) = U_2$. D'après le lemme 4.32, $\exists ! \tilde{\varphi} \in \Hom\left( \grq{\C^*}{\R^*}, \grq{\U}{U_2}\right)$. Et comme $\varphi$ est surjectif, $\tilde{\varphi}$ l'est également ; et $\tilde{\varphi}$ est injectif car $\varphi^{-1}(U_2) = \R^*$ (cf remarque du lemme 4.32). D'où l'isomorphisme recherché.
+\end{enumerate}
+

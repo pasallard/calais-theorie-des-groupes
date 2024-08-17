@@ -1,0 +1,18 @@
+%%% Exercice 3.19
+%%% PA Sallard
+\begin{enumerate}
+ \item On partitionne $G$ selon l'ordre de chacun de ses éléments pour obtenir directement $n =\sum\limits_{d\in D} \alpha(d)$.
+
+ \item Soit $d\in D$ tel que $\alpha(d) >0$. Soit alors $x\in G$ tel que $\ordre(x) = d$. Puisque $\Gr{x} \iso \grq{\Z}{d\Z}$, ce groupe engendré par $x$ admet $\varphi(d)$ générateurs, tous d'ordre $d$. On a donc $\alpha(d) \geqslant \varphi(d)$.
+
+ On va établir l'inégalité inverse grâce à la propriété $\mathcal{D}$, qui permet d'affirmer que $\sum\limits_{m\mid d}\alpha(m) \leqslant d~ (\star)$ : en effet, tout élément $x$ dont l'ordre $m$ divise $d$ vérifie $x^d =e$ et la propriété $\mathcal{D}$ indique que le nombre de tels éléments $x$ n'excède pas $d$. Puisque $\alpha(d) >0$, on a $\alpha(m)>0$ pour tout diviseur $m$ de $d$ : en effet, le groupe $\Gr{x} \iso \grq{\Z}{d\Z}$ contient un (et un seul : cf infra) sous-groupe cyclique d'ordre $m$. D'où, en appliquant à $m$ le résultat ci-dessus, $\alpha(m) \geqslant \varphi(m)$. Ainsi $\sum\limits_{m\mid d}\alpha(m) \geqslant \sum\limits_{m\mid d} \varphi(m)$.
+
+ Supposons par l'absurde que $\alpha(d) > \varphi(d)$. On aurait alors $\sum\limits_{m\mid d}\alpha(m)> \sum\limits_{m\mid d} \varphi(m)$. Mais $\sum\limits_{m\mid d} \varphi(m) = d$ (cf infra), donc on aurait $\sum\limits_{m\mid d}\alpha(m) > d$, ce qui contredit l'inégalité $(\star)$. Donc nécessairement $\alpha(d) \leqslant \varphi(d)$, d'où le résultat recherché : $\alpha(d) = \varphi(d)$.
+
+ \item On établit ce résultat classique de théorie des nombres sans faire appel à la question précédente (qui l'utilise !). On commence par utiliser le théorème 3.14 : dans un groupe cyclique $C_n$, il y a un et un seul sous-groupe (cyclique) d'ordre $d$ pour chaque diviseur $d$ de $n$. Dans un tel sous-groupe $C_d$, il y a exactement $\varphi(d)$ éléments d'ordre $d$ (variante de la proposition 3.21) : ainsi $\forall d\in D,~ \alpha(d) =\varphi(d)$. Et l'égalité de la question 1 permet de conclure que $n = \sum\limits_{d\in D} \varphi(d)$.
+
+ \item En simplifiant les termes nuls et les termes communs dans l'égalité $\sum\limits_{d\in D} \alpha(d) = \sum\limits_{d\in D} \varphi(d)$, il vient que $\alpha(n) = \varphi(n) + \sum\limits_{\stackrel{d\in D, d\neq n}{\alpha(d) = 0}} \varphi(d) > 0$. D'où l'existence d'un élément d'ordre $n$ dans $G$, qui est alors cyclique.
+\end{enumerate}
+
+
+

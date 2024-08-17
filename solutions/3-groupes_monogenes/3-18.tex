@@ -1,0 +1,20 @@
+%%% Exercice 3.18
+%%% PA Sallard
+\begin{enumerate}
+ \item On fixe $i\in \{1,\ldots, k\}$.
+
+ $\bullet$ D'après la propriété $\mathcal{D}$ appliquée au diviseur $\frac{n}{p_i}$ de $n$, il existe au plus $\frac{n}{p_i}<n$ éléments de $G$ d'ordre $\frac{n}{p_i}$ : il existe au moins un $b_i$ qui n'est pas d'ordre $\frac{n}{p_i}$. Nécessairement, il vérifie alors $b_i^{\frac{n}{p_i}}\neq e$.
+
+ $\bullet$ Puisque $\left(b_i^{\frac{n}{p_i^{\alpha_i}}} \right)^{p_i^{\alpha_i-1}} = b_i^{\frac{n}{p_i}}$, on a par contrapposée que
+ $b_i^{\frac{n}{p_i}}\neq e \implies b_i^{\frac{n}{p_i^{\alpha_i}}} \neq e$.
+
+ $\bullet$ On pose alors $a_i = b_i^{\frac{n}{p_i^{\alpha_i}}}$. On sait déjà que $\ordre(a_i)>1$ et puisque $a_i^{p_i^{\alpha_i}} = a^n = e$, cet ordre $\ordre(a_i)$ divise $p_i^{\alpha_i}$. L'entier $p_i$ étant premier, il existe $\beta_i \leqslant \alpha_i$ tel que $\ordre(a_i) = p_i^{\beta_i}$. Si on avait $\beta_i<\alpha_i$, l'égalité $e = a_i^{p_i^{\beta_i}} = b_i^{\frac{n}{p_i^{\alpha_i-\beta_i}}}$ conduirait, par élévation à la puissance $p_i^{\alpha_i-\beta_i-1}$ à $b_i^{\frac{n}{p_i}} = e$, ce qui est contraire à l'hypothèse. Donc $\beta_i = \alpha_i$, \textit{i.e.} $\ordre(a_i) = p_i^{\alpha_i}$.
+
+ \item $G$ est abélien par hypothèse donc on peut appliquer le résultat de l'exercice 14 : par récurrence, on établit l'existence d'un élément $x\in G$ d'ordre $\ordre(x) = p_1^{\alpha_1}\times \cdots \times p_k^{\alpha_k} = n$. Mais $G$ est d'ordre $n$, ce qui signifie que $G = \Gr{x}$ : autrement dit, $G$ est cyclique.
+
+ \item Dans le corps fini $K$, le polynôme $X^d-1$ admet au plus $d$ racines (\emph{théorème admis par hypothèse}) donc le groupe multiplicatif $K^*$ vérifie la propriété $\mathcal{D}$ et il est abélien. Il vient d'après la question 2 que $K^*$ est cyclique.
+
+ On applique enfin ce résultat au corps $\grq{\Z}{p\Z}$, dont on sait par ailleurs que le groupe des inversibles $G_p$ est d'ordre $\varphi(p) = p-1$, de sorte que $(G_p,\times) \iso \left(\grq{\Z}{(p-1)\Z},+\right)$.
+\end{enumerate}
+
+

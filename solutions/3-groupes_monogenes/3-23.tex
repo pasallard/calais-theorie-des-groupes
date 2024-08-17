@@ -1,0 +1,9 @@
+% Exercice 3.23
+% Pierre-Alain Sallard
+Puisque on peut mettre en bijection tout $r$-cycle de $S_n$ avec le cycle $\gamma = (1,2, \ldots, r)$ (voir exercice 24 par exemple), on se contente d'établir que $\forall p \in \{1,\ldots,r-1\}, \gamma^p$ est un cycle $\iff (p,r) = 1$.
+
+Et les nombres $\{1,2, \ldots, r\}$ sont considérés comme des nombres de $\grq{\Z}{r\Z}$. Ainsi, $\forall j\in \N,~ \gamma^j(\cl{1}) = \cl{1+j}$
+
+$\bullet$ Sens direct, par contrapposée : soit $p$ tel que $(p,r)\neq 1$. Notons $m =\ppcm(p,r)< pr$, avec $m=pp'=rr'$ où $p'<r$. Alors $(\gamma^p)^{p'}(\cl{1}) = \cl{1+pp'} = \cl{1+rr'}=\cl{1}$. Ainsi, la $\gamma^p$-orbite de $\cl{1}$ a une longueur inférieure ou égale à $p'< \card{\grq{\Z}{r\Z} }$ : $\gamma^p$ ne peut pas être un cycle (proposition 3.53).
+
+$\bullet$ Sens réciproque : soit $p$ tel que $(p,r)=1$. On a $\forall j\in \{1, \ldots, r-1\},~ (\gamma^p)^{j}(\cl{1}) = \cl{1+pj}\neq \cl{1}$ : en effet, par l'absurde, $\cl{1+pj}= \cl{1}\implies pj\equiv 0~ [r]\implies r\mid j$ (par le théorème de Gauss), ce qui est impossible vu la définition de $j$. Et comme $(\gamma^p)^{r}(\cl{1}) = \cl{1}$, on peut affirmer que la $\gamma^p$-orbite de $\cl{1}$ est de longueur $r = \card{\grq{\Z}{r\Z} }$. Il n'y a ainsi qu'une seule $\gamma^p$-orbite non ponctuelle, ce qui certifie que $\gamma^p$ est un cycle (proposition 3.53).

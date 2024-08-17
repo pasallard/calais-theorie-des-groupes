@@ -12,7 +12,9 @@ est un homomorphisme de groupes ; en effet, pour tout $(\sigma_1, \sigma_2)\in\S
     &= (f_{\sigma_1} \circ f_{\sigma_2})(\gamma).
 \end{align*}
 Par définition, l'homorphisme $f$ est surjectif.
-Intéressons-nous à son noyau:
+
+
+Intéressons-nous à son noyau :
 \begin{align*}
   \Ker(f)
     &= \set{\sigma\in\Sym{n}\given f_{\sigma} = \id_{\Sym{n}}} \\
@@ -27,8 +29,8 @@ Comme $n\geq 3$, il existe $k\in\N_n\setminus\set{j, \sigma(j)}$.
 Notons $\tau$ la transposition $(j, k)$.
 En utilisant le résultat de la question a) de l'exercice précédent, on a
 \[
-  (j, k) = \sigma\circ\tau\circ\sigma^{-1} = (\sigma(j), \sigma(k)).
+  \tau = \sigma\circ\tau\circ\sigma^{-1} = (\sigma(j), \sigma(k)).
 \]
-Cela implique que $j = \sigma(j)$ ou $k = \sigma(j)$ ce qui est impossible.
+Cela implique que $j = \sigma(j)$ ou $k = \sigma(j)$ mais ce dernier cas est impossible. Donc $\forall j~ \sigma(j) = j$.
 
 Nous avons montré que $f$ est un isomorphisme de groupes.

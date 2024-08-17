@@ -11,15 +11,18 @@
 
       \item % a) 3)
         Soit $x\in E$.
-        On a $(\sigma\circ\tau\circ\sigma^{-1})(x) \neq x$ si et seulement si $\tau(\sigma^{-1}(x)) \neq \sigma^{-1}(x)$, d'où $s(\sigma\circ\tau\circ\sigma^{-1}) = \sigma(s(\tau))$.
+        On a $(\sigma\circ\tau\circ\sigma^{-1})(x) \neq x \iff \tau(\sigma^{-1}(x)) \neq \sigma^{-1}(x) \iff \sigma^{-1}(x) \in s(\tau) \iff x \in \sigma(s(\tau))$, d'où $s(\sigma\circ\tau\circ\sigma^{-1}) = \sigma(s(\tau))$.
 
       \item % a) 4)
         Soit $x\in E$. 
-        Si $x\notin s(\sigma)\cup s(\tau)$, alors $(\sigma\circ\tau)(x) = \sigma(x) = x$ et $(\tau\circ\sigma)(x) = \tau(x) = x$.
-        Si $x\in s(\sigma)$ alors $x\notin s(\tau)$ d'où $(\sigma\circ\tau)(x) = \sigma(x)$.
-        Remarquons que $\sigma(x)\in s(\sigma)$ car $\sigma(\sigma(x)) \neq \sigma(x)$, donc $(\tau\circ\sigma)(x) = \sigma(x)$.
-        De même, si $x\in s(\tau)$ on a $(\tau\circ\sigma)(x) = (\sigma\circ\tau)(x)$.  
-        Nous concluons que $\sigma\circ\tau = \tau\circ\sigma$.
+        $\bullet$~ Si $x\notin s(\sigma)\cup s(\tau)$, alors $(\sigma\circ\tau)(x) = \sigma(x) = x$ et $(\tau\circ\sigma)(x) = \tau(x) = x$.
+
+        $\bullet$~ Si $x\in s(\sigma)$ alors $x\notin s(\tau)$ car l'intersection est vide d'où $(\sigma\circ\tau)(x) = \sigma(x)$.
+        Mais on a aussi $\sigma(x)\in s(\sigma)$ car $\sigma(\sigma(x)) \neq \sigma(x)$, donc $\sigma(x)\notin s(\tau)$ d'où $(\tau\circ\sigma)(x) = \sigma(x)$.
+
+        $\bullet$~ De même, si $x\in s(\tau)$ on a $(\tau\circ\sigma)(x) = (\sigma\circ\tau)(x)$.
+
+        Nous concluons dans tous les cas que $\sigma\circ\tau = \tau\circ\sigma$.
     \end{enumerate}
 
   \item % b)
@@ -43,7 +46,7 @@
       \end{cases}
     \]
     est à support infini, ce qui montre que $S_{(E)}$ est un sous-groupe propre de $S_E$.
-    Par conséquent, si $S_{(E)} = S_E$, alors $E$ est fini.
+    Par contrapposée, si $S_{(E)} = S_E$, alors $E$ est fini.
 
     \emph{Si $E$ est un ensemble infini, alors $S_{(E)}$ est un groupe infini dont tout élément est d'ordre fini et $S_E/S_{(E)}$ est un groupe infini.}
     Soit $(x_n)_{n\geq 0}$ une suite d'éléments de $E$.
@@ -55,11 +58,11 @@
     Il est clair que $\sigma^n = e$, donc $\sigma$ est d'ordre fini.
     Ainsi, tout élément de $S_{(E)}$ est d'ordre fini.
 
-    Puisque $S_{(E)}$ est un sous-groupe normal de $S_E$, l'ensemble $S_E/S_{(E)}$ est un groupe.
-    Si ce groupe est fini, alors pour toute permutation $\sigma\in S_E$, il existe un entier $n > 0$ tel que $\sigma^n\in S_{(E)}$.
-    Comme $S_{(E)}$ est fini, cela implique que $\sigma$ est d'ordre fini.
-    Soit $(x_n)_{n\in\Z}$ une suite injective d'éléments de $E$.
-    Alors le cycle $\gamma = (\dots, x_2, x_{-1}, x_0, x_1, x_2, \dots)$ défini par $\gamma(x_i) = x_{i + 1}$ pour tout $i\in\Z$, est d'ordre infini.
-    Il s'ensuit que le groupe $S_E/S_{(E)}$ est d'ordre infini.
+    Puisque $S_{(E)}$ est un sous-groupe normal de $S_E$, l'ensemble $\grq{S_E}{S_{(E)}}$ est un groupe.
+    Si ce groupe quotient est fini d'ordre $n\in \N^*$, alors pour toute permutation $\sigma\in S_E,~ \cl{\sigma}^n = \cl{e} \implies \sigma^n\in S_{(E)}$.
+    Et on vient de montrer que tout élément de $S_{(E)}$ est d'ordre fini : cela signifie que $\exists p\in \N,~ (\sigma^n)^p = \sigma^{np}=e$, d'où le fait que $\sigma$ est d'ordre fini.
+
+    Soit $(x_n)_{n\in\Z}$ une suite injective d'éléments de $E$ et $\gamma = (\dots, x_{-2}, x_{-1}, x_0, x_1, x_2, \dots)$ le cycle défini par $\gamma(x_i) = x_{i + 1}$ pour tout $i\in\Z$. Si $\grq{S_E}{S_{(E)}}$ était fini, l'ensemble $\{\cl{\gamma^i}, i\in \N \}$ de classes d'équivalence modulo $S_{(E)}$  serait fini et il existerait $p,q \in \N$ avec $p\neq q$ et $\tau \in S_{(E)}$ tel que $\gamma^p = \gamma^q \tau$. Or $\abs{s(\tau)}<\infty \implies \exists i,~ x_i\notin s(\tau)$ et on aurait $\gamma^p(x_i) = \gamma^q(x_i)$, ce qui est impossible vu la définition de $\gamma$ et de la suite $(x_i)$.
+    Il s'ensuit que le groupe $\grq{S_E}{S_{(E)}}$ est d'ordre infini.
 \end{enumerate}
 

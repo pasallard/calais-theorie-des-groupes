@@ -1,0 +1,6 @@
+% Pierre-Alain Sallard
+On suit l'indication du texte, en améliorant même un peu la propriété, en montrant par récurrence sur $n$ que toute permutation de $S_n$ est un produit \emph{d'au plus }$n-1$ transpositions de $S_n$.
+
+L'initialisation pour $n=2$ est triviale puisque une permutation de $S_2$ est soit l'identité $e$ soit la transposition $(1,2)$.
+On suppose ensuite que la propriété est vérifiée au rang $n-1$ et on considère $\sigma \in S_n$. Sans perte de généralité, on peut supposer que $\sigma(n) = k\neq n$ car sinon on applique directement l'hypothèse de récurrence à la restriction de $\sigma$ à $\{1, \ldots, n-1\}$. On note alors $\tau = (k,n)$ : puisque $\tau\circ \sigma(n) = \tau(k) = n,~ \supp(\tau\circ \sigma) \subset \{1, \ldots, n-1\}$ et on peut appliquer l'hypothèse de récurrence à la restriction de $\tau\circ \sigma$. Ainsi, il existe au plus $n-2$ permutations $\mu_1,\ldots, \mu_{n-2}$ (de $S_{n-1}$, que l'on prolonge en permutations de $S_n$) telles que $\tau\circ \sigma = \mu_1\circ\ldots\circ \mu_{n-2}$, d'où $\sigma = \tau \circ \mu_1\circ\ldots\circ \mu_{n-2}$. CQFD.
+

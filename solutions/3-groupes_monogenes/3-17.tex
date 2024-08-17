@@ -1,18 +1,22 @@
 %%% Exercice 3.17
 %%% PA Sallard
-\textit{Reamrque} : dans les questions 1 et 2, on note multiplicativement la loi de $G$.
+\textit{Remarque} : dans les questions 1 et 2, on note multiplicativement la loi de $G$.
 
 \begin{enumerate}
  \item Soit $\alpha \in \Aut(G)$ et $g\in G$ : notons $g'=\alpha^{-1}(g)$. Or $x$ engendre $G$ donc $\exists k\in \N,~ g'= x^k$. Ainsi $g = \alpha(g') = \alpha(x^k) = \left(\alpha(x)\right)^k \in \Gr{\alpha(x)}$. Ceci signifie que $\alpha(x)$ engendre $G$.
- \item $\bullet$ On vérifie trivialement que $\lambda$ est un morphisme et il suffit, puisque $G$ est d'ordre fini, de montrer que $\lambda$ est injectif pour avoir la bijectivité. Soit alors $a\in G$ tel que $\lambda(a) = a^k = e$. Alors l'ordre de $a$ divise $k$ ; mais il divise aussi $\Card{G} = n$ donc il divise leur PGCD qui vaut 1. Le seul élément d'ordre 1 étant le neutre, on obtient bien $\Ker \lambda = \{e\}$.
+ \item $\bullet$ On vérifie trivialement que $\lambda$ est un morphisme et il suffit, puisque $G$ est d'ordre fini, de montrer que $\lambda$ est injectif pour avoir la bijectivité. Soit alors $a\in G$ tel que $\lambda(a) = a^k = e$. Alors l'ordre de $a$ divise $k$ ; mais il divise aussi $\card{G} = n$ donc il divise leur PGCD qui vaut 1. Le seul élément d'ordre 1 étant le neutre, on obtient bien $\Ker \lambda = \{e\}$.
 
- $\bullet$ On considère l'application $\theta \colon G_n\to \Aut(G)$ qui, à tout $k\in G_n$, associe l'automorphisme $a\in G\mapsto a^k$. Le point précédent à montré que $\theta$ est bien définie et on vérifie facilement que c'est un morphisme (trivial) : il reste à prouver que $\theta$ est injective. Soit $k\in \Ker \theta$ : cela signifie que $\theta(k)= \id_G$. Notamment pour un générateur $x$ de $G,~ x^k = x$. Mais comme ci-dessus, $x^{k-1} = e\implies k-1  \divise n$. Mais $0\leqslant k-1\leqslant n-2\implies k=1$. Ainsi, le noyau de $\theta$ est bien réduit au neutre de $G_n$. D'où le résultat : $\Aut(G)$ est isomorphe au groupe des inversibles de l'anneau $\grq{\Z}{n\Z}$.
+ $\bullet$ On considère l'application $\theta \colon G_n\to \Aut(G)$ qui, à tout $k\in G_n$, associe l'automorphisme $a\in G\mapsto a^k$. 
+ Le point précédent a montré que $\theta$ est bien définie et on vérifie facilement que c'est un morphisme (trivial) : 
+ il reste à prouver que $\theta$ est injective. Soit $k\in \Ker \theta$ : cela signifie que $\theta(k)= \id_G$. 
+ Notamment pour un générateur $x$ de $G,~ x^k = x$. Mais comme ci-dessus, $x^{k-1} = e\implies n=\ordre(x)  \divise k-1$. 
+ Mais $0\leqslant k-1\leqslant n-2\implies k=1$. Ainsi, le noyau de $\theta$ est bien réduit au neutre de $G_n$. D'où le résultat : $\Aut(G)$ est isomorphe au groupe des inversibles de l'anneau $\grq{\Z}{n\Z}$.
 
  On conclut immédiatement que $\Aut(G)$ est abélien, d'ordre $\varphi(n)$.
 
- \item On note maintenant additivement la loi de $G$. On a clairement $\{\id, -\id \}\subset Aut(G)$ et on va montrer l'inclusion réciproque. Soit $\alpha \in \Aut(G)$ et $x$ un générateur de $G$ : $\alpha(x)\in G$ donc $\exists k\in \Z,~ \alpha(x) = kx~ (E_1)$. Mais $\alpha(x)$ engendre $G$ (question 1) donc $\exists k' \in \Z,~ x = k'\alpha(x)~ (E_2)$. On compose $(E_2)$ par $\alpha : \alpha(x) = k' \alpha^2(x)$. Mais $E_1\implies \alpha^2(x) = k\alpha(x)$ donc $\alpha(x) = kk' \alpha(x)$. Mais $\alpha(x)\neq O_G$ (car il engendre $G$) donc $kk' -1 = 0$, \textit{i.e.} $kk' = 1$. Puisque $k,k'\in \Z$, il n'y a que deux possibilités : $k =1$ ou $k=-1$. Le premier cas donne $\alpha = \id$ (car $x$ engendre $G$) et le second donne $\alpha = -\id$.
+ \item Dans cette question, $G \iso \Z$ donc $\Aut(G)\iso \Aut(\Z)$ (exercice 1.32) : on va alors montrer que $\Aut(\Z)$ est cyclique d'ordre 2. On a clairement $\{\id, -\id \}\subset \Aut(\Z)$ et on va montrer l'inclusion réciproque. Soit $\alpha \in \Aut(G)$ : $1$ est générateur de $\Z$ donc $\exists k\in \Z,~ \alpha(1) = k\times 1~ (E_1)$. Mais $\alpha(1)$ engendre $G$ (question 1) donc $\exists k' \in \Z,~ 1 = k'\alpha(1)~ (E_2)$. On compose $(E_2)$ par $\alpha : \alpha(1) = k' \alpha^2(1)$. Mais $E_1\implies \alpha^2(1) = k\alpha(1)$ donc $\alpha(1) = kk' \alpha(1)$. Puisque $\alpha(1)\neq 0$ (car il engendre $\Z$), il vient que $kk' = 1$. Et comme $k,k'\in \Z$, il n'y a que deux possibilités : $k =1$ ou $k=-1$. Le premier cas donne $\alpha = \id$ (car $1$ engendre $\Z$) et le second donne $\alpha = -\id$.
 
- Ainsi $\Aut(G) = \{\id, -\id \}$ est bien cyclique, d'ordre 2.
+ Ainsi $\Aut(\Z) = \{\id, -\id \}$ est bien cyclique, d'ordre 2.
 
  \item D'après la question 2, $\Aut\left(\grq{\Z}{3\Z} \right)$ est isomorphe au groupe $G_3 = \{\cl{1},\cl{2}\}$ des inversibles dans $\grq{\Z}{3\Z}$ ; et $\Aut\left(\grq{\Z}{4\Z} \right)$ est isomorphe au groupe $G_4 = \{\cl{1},\cl{3}\}$ des inversibles dans $\grq{\Z}{4\Z}$. Ces deux groupes $G_3$ et $G_3$ sont isomorphes (groupes cycliques d'ordre 2) donc $\Aut\left(\grq{\Z}{3\Z} \right)$ et $\Aut\left(\grq{\Z}{4\Z} \right)$ sont isomorphes, sans que les groupes dont ils sont issus soient isomorphes.
 \end{enumerate}

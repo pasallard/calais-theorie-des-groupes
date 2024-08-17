@@ -1,0 +1,21 @@
+% Pierre-Alain Sallard
+\begin{enumerate}
+  \item  Par hypothèse, il existe un élément dans $G$ d'ordre 2, et cet ordre 2 divise l'ordre de $G$ donc $G$ est d'ordre pair.
+  \item On a clairement $u\in U\implies u^2 = e \implies u^{-1}=u$ et idem pour $v$.
+  Par ailleurs, d'après la proposition 1.38, $\Gr{u,v} = \{x_1\ldots x_n ; n\in \N^*, x_i \in \{u,v\} \text{ ou } x_i^{-1} \in \{u,v\}, \forall i\}$. Mais dans cette définition, $x_i^{-1} \in \{u,v\}\iff x_i \in \{u,v\}$ donc tout élément de $\Gr{u,v}$ s'écrit comme un produit de $u$ et de $v$. Et dans ce produit, on peut supprimer deux $u$ ou deux $v$ à la suite (car $u^2 =v^2=e$), si bien qu'il ne reste plus que l'une des six écritures proposées :
+  $\Gr{u,v} = \{e, u, v, (uv)^m, u(uv)^n, v(uv)^p ; m,n,p\in \N^*\}$.
+  \item Avec $t=uv$ d'ordre $k$ dans $G$, on observe que :
+  \begin{itemize}
+   \item $v = ut$ ;
+   \item $(uv)^m = t^m$ peut se simplifier en un $t^j$ où $j\equiv m~[k]$ et $1\leqslant j\leqslant k-1$ ;
+   \item $u(uv)^n = ut^n = ut^{n \text{ mod } k}$ ;
+   \item $v(uv)^p = ut(t)^p = ut^{p+1}$, qui ramène à un cas déjà vu.
+  \end{itemize}
+Avec la question précédente, on a donc $\Gr{u,v} \subset \{t,\ldots, t^{k-1}, e, u, ut,\ldots, ut^{k-1}\}$ et l'inclusion réciproque est triviale.
+
+Puis on calcule $(ut)^2 = v^2 = e$ et de même $(tu)^2 =(uv)u(uv)u = e$.
+
+On vient donc d'établir que $\Gr{u,v} = \Gr{u,t}$ est engendré par deux éléments $t$ et $u$ tels que $\ordre(t)=k,~ \ordre(u)=2$ et $\ordre(tu)=2$ : d'après la proposition 3.74, $\Gr{u,v}$ est isomorphe à $D_k$.
+
+\end{enumerate}
+

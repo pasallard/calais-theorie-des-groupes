@@ -1,0 +1,12 @@
+% Pierre-Alain Sallard
+\emph{Remarque} : un exemple de sous-groupes de $(\Q,+)$ est $q\Z$, où $q\in \Q$.
+
+\begin{enumerate}
+ \item Comme indiqué, on suppose que $\grq{\Q}{H}$ est fini, d'ordre $n$. Comme $H$ est un sous-groupe propre de $\Q$, il existe $q\in \Q,~ q \notin H$. Posons $x = \frac{q}{n} \in \Q$ : d'après l'exercice 13 (en adoptant une écriture additive de la loi de $G$), on aurait $nx \in H$. Mais $nx = n \frac{q}{n} = q \notin H$, d'où une contradiction. Ainsi, il n'existe pas de sous-groupe propre $H$ de $\Q$ tel que $\grq{\Q}{H}$ soit d'ordre fini.
+
+ \item $\bullet~$ Avec les notations de l'énoncé, soit $q\neq 0 \in H$ : sans perte de généralité, on peut prendre $q>0$, écrit sous la forme $\frac{a}{b}$ avec $a,b\in \N^*$. Puisque $H$ est stable par addition, $b\times q = a\in H$. Il en va de même pour $K$ : $\exists c\in \N^*,~ c\in K$. Or $H$ et $K$ sont stables par addition donc $a\times c \in H$ et $a\times c \in K$ : ainsi $H\cap K\neq \{0\}$.
+
+ $\bullet~$ On va montrer directement, sans le point précédent, que $H< \Q \implies \grq{\Q}{H}$ non monogène.
+
+ Par l'absurde, on suppose que $\grq{\Q}{H}$ est monogène : étant infini (cf. question a), il est isomorphe à $\Z$ (théorème 3.3). Par composition, il existe donc un morphisme surjectif de $\Q$ vers $\Z$ ($\Q\to \grq{\Q}{H}$ (projection canonique) $ \to \Z$). Or le seul morphisme de groupe de $\Q$ sur $\Z$ est le morphisme nul : en effet, en notant $f$ un tel morphisme, s'il existait $q\in \Q$ tel que $f(q)\in \Z^*$, on aurait $\forall n\in \N^*,~ \frac{f(q)}{n} = \frac{1}{n}\times f\left(n\times \frac{q}{n}\right) = \frac{1}{n}\times n f\left(\frac{q}{n}\right) = f\left(\frac{q}{n}\right) \in \Z$ et l'entier non nul $f(q)$ admettrait une infinité de diviseurs, ce qui est impossible et $f$ est donc le morphisme nul. Mais le morphisme nul de $\Q$ sur $\Z$ n'est pas surjectif : on a donc une contradiction et $\grq{\Q}{H}$ ne peut pas être monogène.
+\end{enumerate}
