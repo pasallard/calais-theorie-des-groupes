@@ -1,0 +1,13 @@
+%%% Exercice 4.27, Pierre-Alain Sallard
+
+\begin{enumerate}
+    \item Soit $\alpha\in \Aut(G)$ : étant donné $g\in G$, on établit que $\alpha(C_g)= C_{\alpha(g)}$. Ainsi $\alpha(C_g)$ est bien la classe de conjugaison d'un élément de $G$, à savoir de $\alpha(g)$.
+    \item \emph{Montrer que $J$ est un sous-groupe de $\Aut(G)$} : on a bien $\id_{G}\in J$ donc $J$ est non vide. Puis si $\alpha, \beta \in J,~\forall g\in G,~ \alpha \beta(C_g) = \alpha\left(\beta(C_g)\right)=\alpha(C_g)$ (car $\beta \in J$) $=C_g$ (car $\alpha\in J$) donc $\alpha\beta \in J$ ; et $\alpha(C_g)=C_g \implies \alpha^{-1}(C_g) = C_g$ donc $\alpha^{-1}\in J$. Ainsi $J$ est un sous-groupe de $\Aut(G)$ (définition 1.20).
+
+    \emph{Montrer que $J\normal \Aut(G)$}. Soit $\alpha\in J$ et $f\in \Aut(G):~ \forall g\in G,~ (f\alpha f^{-1})(C_g) = f \alpha (C_{f^{-1}(g)})$ (cf point 1) $= f\left(C_{f^{-1}(g)} \right)$ (car $\alpha \in J$) $=C_{f\circ f^{-1}(g)}$ (cf point 1) $ =C_g$. Ainsi $f\alpha f^{-1} \in J$, d'où $J\normal \Aut(G)$ (théorème 4.10).
+
+    \emph{Montrer que $\Int(G) \subset J$}. Ce point s'établit sans difficulté, en revenant à la définition d'un automorphisme intérieur.
+
+
+
+\end{enumerate}

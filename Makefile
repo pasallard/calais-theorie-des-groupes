@@ -21,6 +21,8 @@ define newline
 $(empty)
 $(empty)
 endef
+# PAS
+words = $(wc -w $1 | cut -d ' ' -f 1)
 
 # $(call uppercase,texte)
 uppercase = $(shell echo $1 | tr '[:lower:]' '[:upper:]')
@@ -37,15 +39,8 @@ $(call intercalate,$(call init,$1),$(comma)$(space))$(space)$2$(space)$(lastword
 endef
 
 # Le visionneur de fichier texte
-ifeq ($(PAGER),less)
-    ifeq ($(origin PAGER),environment)
-        PAGER += -F
-    endif
-else ifeq ($(shell which less),)
-    PAGER ?= cat
-else
-    PAGER ?= less -F
-endif
+PAGER = cat
+
 
 # Le visionneur de PDF
 kernel := $(shell uname)
@@ -121,7 +116,7 @@ endif
 source-main = $(book)-$1.tex
 
 # Révision
-GIT_DESCRIBE := $(shell git describe --always --long --dirty)
+GIT_DESCRIBE := $(shell git describe --always --long)
 GIT_DATE 	 := $(shell git log -1 --format=%ad --date=short)
 REVISION     := $(subst -,,$(GIT_DATE))-$(GIT_DESCRIBE)
 
@@ -200,7 +195,7 @@ $(TARGETS_PDF_ALL): $(call target-pdf,%): $(call target-dev,%) FORCE_MAKE
 .PHONY: pdfs
 pdfs: latexmk_opts += -silent
 pdfs: $(TARGETS_PDF)
-ifeq ($(words $^),1)
+ifeq ($(words $(TARGETS_PDF)),1)
 	echo -e "$(green)Le fichier suivant a été créé avec succès :"
 else
 	echo -e "$(green)Les fichiers suivants ont été créés avec succès :"

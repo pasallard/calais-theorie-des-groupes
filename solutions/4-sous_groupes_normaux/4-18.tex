@@ -1,0 +1,25 @@
+%%% Exercice 4.18
+%% PA Sallard
+
+\begin{enumerate}
+  \item Puisque $a^4=e$, que $b^2 = a^2$, que $b^3 = b^2b=a^2b$ et que $ba = ba^5 = (ba^3)(a^2)=abb^2=a(a^2b)=a^3b$, on montre que l'on peut simplifier 
+  tout produit de la forme $\prod\limits_{k=1}^n a^{i_k}b^{j_k}$ en l'un des 8 éléments de $\{e,a,a^2,a^3, b, ab, a^2b, a^3b\}$ d'où le résultat.
+
+  Si on note $a$ la matrice $\begin{pmatrix}0&1\\-1&0\end{pmatrix}$ et $b$ la matrice $\begin{pmatrix}0&\I \\ \I&0\end{pmatrix}$,
+  on montre qu'elles vérifient les conditions du texte : $a$ est d'ordre 4, $a^2 = \begin{pmatrix}-1&0\\0&-1\end{pmatrix} = b^2$, etc. Et d'après
+  l'exercice 1.19, $\Gr{a,b} \iso Q_8$. CQFD.
+
+  \item \emph{$Q_8$ n'a qu'un seul élément d'ordre 2}. Hormis le neutre, tous les autres éléments de $Q_8$ sont soit d'ordre 2, soit d'ordre 4 (aucun ne peut être d'ordre 8 sinon il engendrerait $Q_8$, qui serait donc cyclique, donc abélien, ce qui n'est pas le cas).
+  On établit facilement que $a^2$ est d'ordre 2 et on montre qu'aucun des autres n'est d'ordre 2 (donc forcément d'ordre 4). Par exemple : $(a^3)^2 = a^6=a^2\neq e$, $(ab)^2 = a(ba)b=a(a^3b)b=a^4b^2 = b^2\neq e$, etc.
+
+  \emph{Déterminer le centre de $Q_8$}. On établit d'abord que $a^2 \in \ZG(Q_8)$ en vérifiant qu'il commute avec tous les autres éléments : c'est évident avec $a$ et $a^3$ ; puis
+  $ba^2 = (ba)a = a^3b a = a^3(a^3b) = a^2b$ ; $(ab)a^2 = (ba^3)a^2 = ba = a^3b = (a^2)ab$ ; etc.
+
+  Mais aucun autre élément ne commute avec tous les autres : par exemple, $ab = ba^3\neq ba\implies a,b \notin \ZG(Q_8)$, $a^3b = ba \neq ba^3\implies a^3\notin ZG(Q_8)$, etc.
+
+  Au final, $\ZG(Q_8) = \{e, a^2\}= \Gr{a^2}$.
+   \item Soit $H$ un sous-groupe non trivial de $Q_8$ : alors $H$ est soit d'ordre 2, soit d'ordre 4 (cf question précédente). Si $\ordre(H)=2$,%
+   alors d'après la question précédente $H=\Gr{a^2} = \ZG(Q_8)$ est évidemment normal dans $Q_8$. Et si $\ordre(H)=4$, alors $[Q_8:H] = 2$ et
+   d'après la proposition 4.14, $H$ est normal dans $Q_8$. Donc tout sous-groupe de $Q_8$ est bien normal.
+  
+\end{enumerate}

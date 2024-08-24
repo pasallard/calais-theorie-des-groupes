@@ -1,0 +1,17 @@
+%%% Exercice 4.25, Pierre-Alain Sallard
+
+\begin{enumerate}
+    \item \emph{Montrer que, si $a\in N_G(H)$, alors la restriction $\sigma'_a$ à $H$ de $\sigma_a \in \Int(G)$ est un automorphisme de $H$}. Par définition du normalisateur $N_G(H),~ \forall h\in H,~ aha^{-1}\in H$ donc $\sigma'_a(H):=\restr{\sigma_a}{H}(H)\subset H$ : d'où $\sigma'_a\in \End(H)$. De plus, $N_G(H)$ étant un groupe, $a^{-1}\in N_G(H)$ donc on a aussi $\sigma'_{a^{-1}}\in \End(H)$ et on vérifie aisément que $\sigma'_a\circ \sigma'_{a^{-1}} =  \sigma'_{a^{-1}}\circ\sigma'_a = \id_{H}$ donc $\sigma'_a\in \Aut(H)$.
+
+    \emph{Démontrer que le groupe $\grq{N_G(H)}{C_G(H)}$ est isomorphe à un sous-groupe de $\Aut(H)$}. En notant $f\colon a\mapsto \sigma'_a$ l'application du texte, on vérifie que c'est un morphisme de groupe dont le noyau est $C_G(H)$ (par définition de cet ensemble). Par le premier théorème d'isomorphisme, $\grq{N_G(H)}{\ker f}\iso \im f$, ce qui signifie ici que $\grq{N_G(H)}{C_G(H)}$ est isomorphe à un sous-groupe de $\Aut(H)$.
+
+    \item
+    \begin{itemize}
+     \item On sait que, dans tous les cas, $C_G(H)\normal N_G(H)$ (voir la remarque sous la définition 4.21). Or $H\normal G \implies N_G(H) = G$ (théorème 4.22) donc on a bien $C_G(H)\normal G$.
+     \item L'exercice 17 du chapitre III montre que si $H$ est monogène fini alors $\Aut(H)$ est abélien d'ordre $\varphi(n)$ et que s'il est monogène infini alors $\Aut(H)$ est cyclique d'ordre 2. Le résultat attendu est alors immédiat.
+    \end{itemize}
+
+
+
+
+\end{enumerate}
