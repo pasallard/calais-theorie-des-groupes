@@ -1,0 +1,26 @@
+%%% Exercice 4.30, Pierre-Alain Sallard
+\emph{Remarque} : l'ensemble $\Hom(G,\Gamma)$ est un groupe si on le munit, non pas de la composition des fonctions, mais du produit définit par $(fg)(x):= f(x) g(x)$ (où on note multiplicativement la loi de $\Gamma$), conformément à l'exercice 1.29.
+Le neutre de ce groupe est donc le morphisme constant $x\in G\mapsto e_{\Gamma}$.
+
+\begin{enumerate}
+    \item Étant donné $f\in \Hom(G,\Gamma)$, pour établir que $D(G)\subset \Ker f$, on commence par montrer que 
+    chaque commutateur $[x,y] := x^{-1}y^{-1}xy$ appartient à $\Ker f$, ce qui s'obtient facilement car $\Gamma$ est abélien.
+     Puisque $D(G)$ est engendré par tous les commutateurs de $G$, les propriétés de morphisme de $f$ assure que $D(G)\subset \Ker f$.
+
+     Il suffit ensuite d'appliquer le théorème 4.25 pour obtenir l'existence d'un unique $\overline{f}$ répond aux propriétés de l'énoncé.
+
+    \item D'après le point précédent, l'application $\Phi$ est bien définie et les ensembles de départ et d'arrivée sont bien des groupes (abéliens car $\Gamma$ est lui-même abélien).
+    
+    On montre que c'est un morphisme, en prenant $f,g \in \Hom(G, \Gamma)$ : par définition de la loi de groupe rappelée plus haut, 
+    $\forall x\in G,~ \left(\Phi(f)\Phi(g)\right)\left(\Pi(x)\right) = \Phi(f)\left(\Pi(x)\right) \Phi(g)\left(\Pi(x)\right) = f(x) g(x)$, 
+    donc $\left(\Phi(f)\Phi(g)\right)\circ \pi = fg$. Mais par définition, on a aussi $\Phi(fg)\circ \pi = fg$ donc, par unicité, $\Phi(fg) = \Phi(f)\Phi(g)$. 
+
+    On établit ensuite que ce morphisme est bijectif. Soit $f\in \Ker \Phi:~ \Phi(f)$ est le morphisme constant $w \in \grq{G}{D(G)} \mapsto e_{\Gamma}$ donc 
+    $\forall x\in G,~ f(x) = \Phi(f)\left(\Pi(x)\right) =  e_{\Gamma}$. Ainsi $f$ est nécessairement le neutre de $\Hom(G,\Gamma)$, ce qui établit que $\Phi$ est un morphisme injectif.
+
+    La surjectivité de $\Phi$ s'obtient facilement : étant donné $g\in \Hom\left(\grq{G}{D(G)}, \Gamma\right)$, il suffit de poser $f=g\circ \pi$ pour obtenir un antécédent de $g$ par $\Phi$.
+    CQFD.
+
+    \emph{Remarque} : le caractère abélien des groupes $\Hom(G,\Gamma)$ et $\Hom\left(\grq{G}{D(G)}, \Gamma\right)$ ne semble jouer aucun rôle ici.
+
+\end{enumerate}

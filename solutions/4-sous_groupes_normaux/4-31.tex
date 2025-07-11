@@ -1,0 +1,18 @@
+%%% Exercice 4.31, Pierre-Alain Sallard
+
+\begin{enumerate}
+    \item En développant $y^{-1}\,[x,z]\,y\,[y,z]$ on vérifie l'égalité du texte : $y^{-1}\,[x,z]\,y\,[y,z] = [xy,z]$.
+    \item On note $\pi\colon G\to \grq{G}{Z_1}$ la surjection canonique. Puisque $\ZG\left(\grq{G}{Z_1}\right)$ est un sous-groupe de $\grq{G}{Z_1}$, le théorème 4.28-a
+    donne l'existence d'un unique sous-groupe $Z_2$ de $G$ contenant $Z_1$ tel que $\pi(Z_2) = \ZG\left(\grq{G}{Z_1}\right)$. En outre, puisque $\ZG\left(\grq{G}{Z_1}\right)$ est 
+    normal dans $\grq{G}{Z_1}$, la proposition 4.17-a justifie que $Z_2$ est normal dans $G$.
+    \item Par définition de $Z_2$, $z\in Z_2 \implies \pi(z)$ commute avec tout élément de $\grq{G}{Z_1}$. 
+    
+    \emph{Montrons d'abord que $\im \varphi_z \subset Z_1$}. Soit $x\in G :~ \varphi_z(x) \in Z_1 \iff \pi(\varphi_z(x)) = \cl{e}$ (neutre du groupe $\grq{G}{Z_1}$). Or 
+    $\pi(\varphi_z(x)) = \pi(x^{-1}z^{-1}xz) = \pi(x)^{-1}\pi(z)^{-1}\pi(x)\pi(z)$ et puisque $\pi(z)$ commute avec tout autre élément, on obtient bien $\pi(\varphi_z(x)) = \cl{e}$. CQFD
+
+    \emph{Montrons ensuite que $\varphi_z \in \End(G)$}. D'après l'égalité établie en question 1, $\forall x,y \in G,~ \varphi_z(xy) = y^{-1}\,\varphi_z(x)\,y\,\varphi_z(y)$. 
+    Et puisque $\varphi_z(x) \in Z_1$, il commute notamment avec $y$ d'où on tire que $\varphi_z(xy) = \varphi_z(x)\varphi_z(y)$. CQFD.
+
+    \emph{Montrons enfin que $D(G) \subset \ker \varphi_z $}. Ceci provient du résultat de l'exercice 30, appliqué au cas où $\Gamma = \im \varphi_z \subset Z_1$ qui est bien abélien.
+
+\end{enumerate}

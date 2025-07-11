@@ -1,0 +1,38 @@
+%%% Exercice 5-18
+% PA Sallard
+
+\begin{enumerate}
+  \item On se donne deux éléments $x$ et $y$ de $E$ et il faut montrer que les nombres d'orbites dans $E$ sous l'action de $G_x$ et sous l'action de $G_y$ sont les mêmes.
+
+  Puisque $G$ opère transitivement, $\exists g_0 \in G,~ y = g_0 x$.
+
+  On commence par montrer que $g_0 G_x g_0^{-1} = G_y$ : $\forall g\in G,~ g\in G_x \iff gx = x \iff g_0 g x = g_0 x \iff g_0 g g_0^{-1} y = y \iff  g_0 g g_0^{-1} \in G_y$, d'où ce résultat.
+
+  Puis on se donne une famille $(x_i)_{i\in I}$ de représentants des $G_x$-orbites distinctes : on pose $\forall i\in I,~ y_i = g_0x_i$ et on va montrer que la famille $(y_i)_{i\in I}$ forme des représentants des $G_y$-orbites distinctes. Pour cela, on prend $z\in E$ et on montre qu'il appartient à la $G_y$-orbite d'un des $y_i$ : puisque $g_0^{-1}z \in E$, par définition de la famille des $(x_i),~ \exists k\in I,\exists g\in G_x,~ g_0^{-1}z = g x_k$. On en tire que $z = g_0 g g_0^{-1} y_k$ (par définition de $y_k$) ; et d'après le point précédent, $g_0 g g_0^{-1} \in G_y$, ce qui traduit bien le fait que $z$ est dans la $G_y$-orbite de $y_k$. CQFD.
+
+  Les deux familles $(x_i)$ et $(y_i)$ ayant par construction le même cardinal, on en conclut donc que le nombre de $G_x$-orbites de $E$ ne dépend pas de $x$.
+
+  \item Au préalable, on note qu'on a ici l'égalité $\sum\limits_{x\in E} \card{G_x} = \card{G}$ (prendre les premières lignes de la preuve de l'exercice précédent, avec $\sum\limits_{x\in E} \card{G_x} = \sum\limits_{g\in G} \card{F(g)} = 1\times \card{G}$ ).
+
+  On applique ensuite la formule de Burnside au cas où le groupe considéré est $G_x$, pour un $x\in E$ quelconque :
+       \[
+          \sum_{g\in G_x} \card{F(g)} = r \card{G_x}.
+        \]
+Puis par sommation sur $x$ et avec la remarque préalable :
+     \[
+          \sum_{x\in E} \sum_{g\in G_x} \card{F(g)} = r \sum_{x\in E} \card{G_x} = r \card{G}.
+        \]
+
+Puis on reprend la définition de l'ensemble $S$ de l'exercice précédent : $S = \{(g,x)\in G\times E,~ gx = x\}$, que l'on peut aussi écrire sous la forme $S = \bigcup\limits_{x\in E} \bigcup\limits_{g\in G_x} \{(g,x) \}$ mais aussi $S = \bigcup\limits_{g\in G} \bigcup\limits_{x\in F(g)} \{(g,x) \}$. Ainsi, le terme de droite de l'égalité précédente est une somme sur $S$ et on peut intervertir la double somme :
+     \[
+          \sum_{x\in E} \sum_{g\in G_x} \card{F(g)} =  \sum_{g\in G} \sum_{x\in F(g)} \card{F(g)}
+        \]
+
+Mais dans cette dernière somme, $\card{F(g)}$ ne dépend pas de $x$ donc $\sum\limits_{x\in F(g)} \card{F(g)} = \card{F(g)} \times \sum\limits_{x\in F(g)} 1 = \card{F(g)}^2$.
+
+D'où l'égalité recherchée :
+       \[
+          r \card{G} = \sum_{g\in G} \card{F(g)}^2.
+        \]
+\end{enumerate}
+

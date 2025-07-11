@@ -1,0 +1,48 @@
+
+% P.A. Sallard
+\begin{enumerate}[1)]
+  \item On utilise dans cette question le résultat de l'exercice 3.24 : pour tout $r$-cycle $\gamma = (i_1,\ldots, i_r)$ et toute permutation $\sigma \in S_n,~ \sigma \gamma \sigma^{-1}$ est le $r$-cycle $\left(\sigma(i_1),\ldots, \sigma(i_r)\right)$.
+
+  \begin{enumerate}
+   \item Montrer que $S_n$ opère transitivement par conjugaison sur $C_r$ consiste à montrer que
+
+   \[ \forall \gamma_1, \gamma_2 \in C_r,~ \exists \sigma \in S_n,~ \gamma_2 = \sigma \gamma_1 \sigma^{-1}\]
+   Soit donc $\gamma_1, \gamma_2 \in C_r$ et on réordonne $\N_n$ sous la forme $\{i_1, \ldots, i_r,\ldots, i_n\}$ (respectivement $\{i'_1, \ldots, i'_r,\ldots, i'_n\}$) de telle sorte que $\gamma_1 = (i_1,\ldots, i_r)$ (respectivement $\gamma_2 = (i'_1,\ldots, i'_r)$).
+
+   Si on définit $\sigma \in S_n$ par $\sigma(i_k) = i'_k, ~ \forall k \in \N_n$, le résultat préliminaire montre que $\sigma \gamma_1 \sigma^{-1} = \gamma_2$. CQFD.
+
+   \item On suppose ici que $2\leqslant r \leqslant n-2$ et on se donne encore $\gamma_1, \gamma_2 \in C_r$. On définit $\sigma \in S_n$ comme ci-dessus, ainsi que $\tau = \sigma \circ (i_{n-1}, i_n)$. Puisque $r  \leqslant n-2$, $i_{n-1}$ et $ i_n$ n'appartiennent pas au support de $\gamma_1$ et on a $\gamma_2 = \sigma \gamma_1 \sigma^{-1} = \tau \gamma_1 \tau^{-1}$. Les permutations $\sigma$ et $\tau$ ne différant que d'une transposition, elles sont de parité contraires et l'une d'entre elles appartient nécessairement à $A_n$.
+
+   Ceci justifie que $A_n$ agit également transitivement sur $C_r$, sous l'hypothèse $r \leqslant n-2$
+    \end{enumerate}
+    \item Pour $n\geqslant 5$, on suppose donc l'existence d'un sous-groupe $H\neq \{e\}$ de $A_n$, normal dans $A_n$.
+    \begin{enumerate}
+     \item $H$ étant normal dans $A_n$, il est stable par opération de conjugaison par $A_n$. Si $H$ contient au moins un 3-cycle $\gamma$, il contiendra aussi tous ses conjugués $\sigma \gamma \sigma^{-1}$ (où $\sigma \in A_n$) et la question 1b appliquée au cas où $r=3$ assure que l'on obtient ainsi tous les 3-cycles de $S_n$. Ainsi $H$ contiendra tous les 3-cycles de $S_n$, mais l'exercice 3.26 établit que les 3-cycles engendrent $A_n$. Donc on aura $H= A_n$, ce qui revient à dire que  $A_n$ est simple.
+     \item Avec les notations du texte, $\alpha^{-1} \sigma \alpha \in H$ (car $\sigma \in H$ qui est est stable par conjugaison, car normal dans $A_n$) et $\sigma^{-1} \in H$ donc $\alpha^{-1} \sigma \alpha \sigma^{-1} \in H$.
+
+     Si $\alpha = (i,j,k)$, l'exercice 3.24 assure que $\sigma \alpha \sigma^{-1} = \left(\sigma(i), \sigma(j), \sigma(k)  \right)$ et donc $\alpha^{-1} \sigma \alpha \sigma^{-1} = (i,k,j) \circ \left(\sigma(i), \sigma(j), \sigma(k)  \right)$ est bien un produit de 3-cycles.
+
+     \item \begin{itemize}[$\bullet$]
+            \item Toujours avec les notations du texte, la permutation $\sigma = \alpha^{-1} \tau \alpha \tau^{-1}$ (\emph{l'indication comporte une coquille}) appartient à $H$ et s'écrit comme le produit $ (i,k,j) \circ \left(\tau(i), \tau(j), \tau(k)  \right) = (i,k,j) \circ \left(j, \tau(j), \tau(k)  \right)$ (par définition de $\tau$). L'entier $j$ apparaissant dans les deux 3-cycles, le support de cette permutation $\sigma$ comporte au maximum 5 entiers.
+
+            \item
+            On fait alors  des distinctions de cas selon la valeur de $|\text{supp}(\sigma)|$ :
+            \begin{itemize}
+             \item  On élimine facilement les cas d'un support de cardinal 1 (impossible) et 2 (car alors $\sigma$ serait une transposition, qui est impaire).
+             \item Si le support était de cardinal nul, alors $\sigma = e$ et donc $\alpha = \tau \alpha \tau^{-1}$, \textit{i.e.} $(i,j,k) = (\tau(i), \tau(j), \tau(k)) = (j, \tau(j), \tau(k))$. Ceci impliquerait que $\tau(j) = k$ et $\tau(k) = i$, ce qui contredit la construction $k\notin \{i,j, \tau^{-1}(i)\}$.
+             \item Si $|\text{supp}(\sigma)| = 3$, $\sigma$ est un 3-cycle et on conserve ce cas.
+             \item Si $|\text{supp}(\sigma)| = 4$, alors $\sigma$ est soit un produit de deux transpositions à supports disjoints, soit un 4-cycle. Mais ce dernier cas est exclus, car un 4-cycle est une permutation impaire d'après la formule 24 de la page 115.
+             \item Si $|\text{supp}(\sigma)| = 5$, alors  $\sigma$ est soit un 5-cycle, soit le produit d'un 3-cycle (permuation paire) et d'une transposition (permuation impaire) à supports disjoints. La parité de $\sigma$ exclus donc ce dernier cas.
+            \end{itemize}
+            Il ne reste donc bien que les 3 situations du texte.
+
+           \item Si $\sigma$ est un 3-cycle, on arrête là : $H$ contient bien un 3-cycle, à savoir $\sigma$.
+
+           Si $\sigma$ est le 5-cycle $(i,j,k,l, m)$ (où ces entiers ne sont plus ceux exhibés dans la définition de $\tau$), posons $\alpha = (i,j,k) \in A_n$. D'après la question 2b, $\alpha^{-1} \sigma \alpha \sigma^{-1} \in H$ et on montre que cette permutation est le 3-cycle $(i,k,l)$.
+
+           Enfin, si $\sigma = (i,j)(k,l)$, on peut bien considérer $\beta = (i,j,m)$ avec les 5 entiers en question distincts et on montre que $\beta^{-1} \sigma \beta \sigma^{-1}$ est le 3-cycle $(i,j,m)$ qui appartient donc à $H$.
+           \end{itemize}
+    Dans tous les cas, $H$ contient un 3-cycle et on en conclut bien que $A_n$ est simple.
+    \end{enumerate}
+
+\end{enumerate}

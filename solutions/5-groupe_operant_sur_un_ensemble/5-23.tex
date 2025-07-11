@@ -1,0 +1,27 @@
+%%% Exercice 5-23
+% PA Sallard
+\emph{Remarque} : puisque $i\colon H\to N$ est l'injection canonique, on convient, pour alléger les notations, d'écrire $\psi$ au lieu de $i(\psi)$.
+
+\begin{enumerate}
+ \item \emph{Montrons que $N\ltimes_i H$ est un sous-groupe de $\Hol(N):= N \ltimes_{\epsilon} \Aut(N)$}.
+
+ Soient $(x_1,\psi_1), (x_2,\psi_2) \in N\ltimes_i H$ :
+ \[ (x_1,\psi_1)(x_2,\psi_2)^{-1} =   (x_1,\psi_1)(\psi_2^{-1}(x_2),\psi_2^{-1}) = (x_1 \psi_1\circ \psi_2^{-1}(x_2), \psi_1\psi_2^{-1})\]
+ Puisque $H\leq \Aut(N)$, on a bien $x_1 \psi_1\circ \psi_2^{-1}(x_2) \in N$ et $\psi_1\psi_2^{-1}\in H$.
+
+ \item
+ \begin{itemize}\itemsep 0.1cm
+  \item  \emph{Montrons que $D_n$ est isomorphe à un sous-groupe de $\Hol\left(\grq{\Z}{n\Z} \right)$}. Soit $H$ le sous-groupe de $\Aut\left(\grq{\Z}{n\Z} \right)$ engendré par $\sigma\colon x\in \grq{\Z}{n\Z}\mapsto -x$, de sorte que $H=\{\id, \sigma \}$.
+
+ D'après le point précédent, $\grq{\Z}{n\Z}\ltimes_i H$ est un sous-groupe de $\Hol\left(\grq{\Z}{n\Z} \right)$ et, par construction, il est isomorphe à $\grq{\Z}{n\Z}\ltimes_{\varphi} \grq{\Z}{2\Z}$ (avec les notations de la remarque 5.50 et de l'exercice 5.21). Or ce dernier est isomorphe à $D_n$, d'où le résultat.
+
+ \item \emph{Montrons que $D_{\infty}$ est isomorphe à $\Hol(\Z)$}. D'après l'exercice 3.17, $\Aut(\Z)$ est un groupe cyclique d'ordre 2, donc isomorphe à $\grq{\Z}{2\Z}$. Comme ci-dessus, on contruit de façon naturelle un isomorphisme entre $\Hol(Z):= \Z \ltimes_{\epsilon} \Aut(Z)$ et $\Z \ltimes_{\varphi} \grq{\Z}{2\Z}$, qui est lui-même isomorphe à $D_{\infty}$ d'après l'exercice 5.21.
+ \end{itemize}
+
+ba
+
+
+\end{enumerate}
+
+
+

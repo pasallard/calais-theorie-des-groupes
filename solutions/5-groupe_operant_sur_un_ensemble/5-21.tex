@@ -1,0 +1,17 @@
+%%% Exercice 5-21
+% PA Sallard
+
+\begin{enumerate}
+  \item Il suffirait d'appliquer le résultat de la remarque 5.50 aux groupes cycliques $C_n = \grq{\Z}{n\Z}$ et $C_2 = \grq{\Z}{2\Z}$ pour obtenir le résultat.
+
+  Mais je trouve que la conclusion de cette remarque 5.50 est expéditive et je vais la détailler ici. Pour pouvoir conclure que le produit semi-direct $G:=C_n\ltimes_{\varphi}C_2$ est isomorphe au groupe diédral $D_n$, il faut montrer que $G$ est engendré par deux éléments $a'$ et $b'$ tels que $\ordre(a')=n,~ \ordre(b')=2$ et $\ordre(a'b')=2$. (proposition 3.74).
+
+  Avec les notations de la remarque 5.50, on note $a'=(a,1)\in G$ et $b'=(1,b)\in G$. Le transport de structures assuré par les injections $\alpha$ et $\beta$ donnent que  $\ordre(a')=n$ et que $\ordre(b')=2$ ; et on vérifie que $\ordre(a'b')=2$ car $(a,b)(a,b) = (a\varphi_b(a), b^2) = (aa^{-1},1)=(1,1)$. Enfin tout élément $(x,h)$ peut s'écrire $(x,h)=(x,1)(1,h)$ et le transport de structures mentionné plus haut donne bien que $(x,h) \in \Gr{a',b'}$. CQFD.
+
+  \item Comme dans la remarque 5.50, on définit $\varphi \in \Hom\left( \grq{\Z}{2\Z}, \Aut(\Z)\right)$ par $\varphi(0) = \id_{\Z}$ et $\varphi(1) : n\in \Z \to -n$.
+
+  N'ayant pas de caractérisation de $D_{\infty}$ à isomorphisme près (pas d'équivalent de la proposition 3.74), on construit explicitement un isomorphisme $f$ de $D_{\infty}$ dans $\Z \ltimes_{\varphi}\grq{\Z}{2\Z}$ de la façon suivante. Tout élément de $D_{\infty}$ est de la forme $\tau_1^n$ ou $\tau_1^n \circ \sigma_0$ (avec les notations de l'exercice 4.35) et on pose $f\colon x\in D_{\infty}
+\mapsto \begin{cases} (n,0) \text{ si } x = \tau_1^n\\ (n,1) \text{ si } x = \tau_1^n\circ \sigma_0\end{cases}$. On vérifie, en traitant tous les cas possibles, que $f$ est bien un morphisme de groupes, injectif et surjectif. CQFD.
+
+
+\end{enumerate}

@@ -1,0 +1,24 @@
+
+% P.A. Sallard
+\begin{enumerate}
+  \item 
+    On établit trivialement que $G = \GL(2,\R)$ opère à droite sur $\R^2$ (l'associativité du produit matriciel permet de vérifier la première propriété de l'action de groupe).
+
+  \item Géométriquement, l'image d'une droite vectorielle par une application linéaire reste une droite vectorielle : donc $G$ opère à droite sur l'ensemble $\mathcal{D}$ des droites vectorielles.
+
+    Dans le cas où $D$ est la droite $\{(2x,x), x\in \R \}$,
+    \begin{itemize}
+      \item son stabilisateur $G_D$ est l'ensemble des matrices $M = \begin{pmatrix}a &b \\ c & d \end{pmatrix}\in \GL(2,\R)$ telles que $D. M = D$. Cette égalité équivaut à $c = 4b+2d-2a$, donc
+      $G_D = \left\{M = \begin{pmatrix}a &b \\ 4b+2b-2a & d \end{pmatrix}, (a,b,d) \in \R^3, \det(M)\neq 0 \right\}$ (et on peut vérifier que c'est bien un sous-groupe de $\GL(2,\R)$).
+      \item son orbite $\Omega_D$ est l'ensemble $\mathcal{D}$ des droites vectorielles.
+    \end{itemize}
+
+  \item On montre de la même façon que dans l'exercice 3.32 que $H$ est isomorphe au groupe diédral $D_4$, groupe des isométries du plan qui conservent globalement les sommets d'un carré. C'est donc bien 
+  un sous-groupe fini de $\GL(2,\R)$ d'ordre 8. Il opére donc également sur l'ensemble  $\mathcal{D}$.
+
+  Par des considérations géométriques, on établit que 
+  \begin{itemize}
+    \item le stabilisateur $H_D$ de la droite $D = (2x,x)$ est $\{ \id, -\id\}$ ; 
+    \item la $H$-orbite de $D$  est l'ensemble des quatre droites $D, D_2, D_3$ et $D_4$ où $D_2 = (2x,-x),~ D_3 = (x, 2x)$ et $D_4 = (2x, -x)$.
+  \end{itemize}
+\end{enumerate}

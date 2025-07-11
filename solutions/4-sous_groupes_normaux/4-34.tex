@@ -1,0 +1,66 @@
+%%% Exercice 4.34, Pierre-Alain Sallard
+\emph{Remarque : le fait que $p$ soit premier n'intervient qu'à partir du quatrième point.}
+
+\begin{enumerate}
+    \item On a clairement $C_{p^{\infty}}\subset \Gamma_{\infty}$. Par ailleurs, $1\in C_{p^{\infty}}$ donc $C_{p^{\infty}}$ est non vide ; et si $x, y\in C_{p^{\infty}}$ avec $x^{p^n}=y^{p^m} = 1$, 
+    alors $\left(x y^{-1}\right)^{p^{n+m}} = \left(x^{p^n}\right)^{p^{m}} \left(y^{p^m}\right)^{-p^{n}} = 1$ donc $x y^{-1}\in C_{p^{\infty}}$. Ainsi $C_{p^{\infty}} \leqslant  \Gamma_{\infty}$.
+    \item On établit trivialement que, quel que soit $n\in \N,~ C_{p^n} < C_{p^{n+1}}$ (ce qui montre au passage la croissance pour l'inclusion de la famille des $C_{p^n}$) puis que, par définition même de $C_{p^{\infty}}$, $C_{p^{\infty}} = \bigcup\limits_{n\in \N} C_{p^n}$.
+    
+    Si $I$ est une partie infinie de $\N$, l'inclusion $\bigcup\limits_{n\in I} C_{p^n} \subset C_{p^{\infty}}$ est triviale et l'inclusion réciproque vient de la croissance (pour l'inclusion) de 
+    la famille des $C_{p^n}$. En effet, soit $z\in C_{p^{\infty}} : \exists n'\in \N,~ z^{p^{n'}} = 1$ \textit{i.e.} $z\in C_{p^{n'}}$. Puisque $I$ est une partie infinie de 
+    $\N,~ \exists n\in I,~ n' \leqslant n$ donc $C_{p^{n'}}\subset C_{p^{n}}$, d'où $z\in \bigcup\limits_{n\in I} C_{p^n}$.
+    \item \emph{Remarque préliminaire}: si on associe à $z\in C_{p^{\infty}}$ le plus petit entier $k$ tel que $z\in C_{p^k}$, alors $z$ est générateur de  $C_{p^k}$. En effet, si tel n'était pas le cas, 
+    alors $\ordre(z)$ serait un diviseur strict de $p^k$, donc de la forme $p^j$ avec $j<k$ ; mais alors $z\in C_{p^j}$, ce qui contredirait la minimalité de $k$.
+
+    Ainsi, avec les notations de l'énoncé, l'inclusion $D \subset \bigcup\limits_{n\in K} C_{p^n}$ vient de la définition de $K$ et l'inclusion réciproque est fournie par la remarque précédente.\medskip
+    
+    
+    Si $K$ était une partie infinie de $\N$, le résultat de la question précédente donnerait $D = \bigcup\limits_{n\in K} C_{p^n} = C_{p^{\infty}}$, ce qui contredirait l'hypothèse que 
+    $D$ est un sous-groupe propre de $C_{p^{\infty}}$. Donc $K$ est une partie finie de $\N$.
+
+    Étant finie (et non vide), $K$ admet un plus grand élément $m$ : par croissance pour l'inclusion de la famille des $C_{p^n},~ D = \bigcup\limits_{n\in K} C_{p^n}  = C_{p^m}$.
+
+    \emph{La propriété que l'on peut énoncer concernant les sous-groupes propres de $C_{p^{\infty}}$} est qu'ils sont tous de la forme $C_{p^{n}}$, pour un certain $n\in \N$ et donc notamment qu'ils 
+    sont cycliques.
+
+    \item Soit $n \in \N$ et $u_n$ un générateur de $C_{p^n}$ : alors $u_n$ est de la forme $\textrm{e}^{\mathrm{i}k\frac{2\pi}{p^n}}$, avec $(k,p^n) =1$. Or $p$ étant premier, 
+    $(k,p^n) =1 \iff (k, p) = 1$. Prenons la racine $p$-ième de $u_n$ définie par $w = \textrm{e}^{\mathrm{i}k\frac{2\pi}{p^{n+1}}}$ : $(k,p) = 1\implies (k,p^{n+1})= 1 \implies w$ est générateur 
+    de $C_{p^{n+1}}$. On peut donc poser $u_{n+1} = w$, de sorte qu'on a bien $\left(u_{n+1}\right)^p = u_n$. Ainsi, on construit de façon itérative l'ensemble $\{u_n ; n\in  \N\}$ dont les éléments vérifient les propriétés de l'énoncé.
+
+    Le fait que cet ensemble $\{u_n; n\in  \N\}$ forme une partie génératrice de $C_{p^{\infty}}$ vient du fait que $C_{p^{\infty}} = \bigcup\limits_{n\in \N} C_{p^n}$ et que chaque $u_n$ est un générateur de $C_{p^n}$.
+    \item \emph{Remarque : la partie génératrice $\{a_n;n\in \N\}$ est définie par un ensemble donc chaque élément est implicitement distinct des autres}.
+    
+    On note déjà que la propriété $a_{n+1}^p = a_n$ indique que $a_n \in \Gr{a_{n+1}}$ et donc que $\Gr{a_n}\subset \Gr{a_{n+1}}$. Le groupe $G$ est ainsi l'union croissante des $\Gr{a_n}$.
+    
+    On montre par récurrence que tout groupe monogène $\Gr{a_n}$ est cyclique d'ordre $p^n$. L'initialisation pour $n=0$, où $a_0=e$, est triviale. On suppose ensuite la propriété établie 
+    pour un rang $n$ quelconque. Puisque $\left(a_{n+1}\right)^{p^{n+1}} = \left(a_{n+1}^p\right)^{p^n} = a_n^{p^n} = e$, on déduit que $\ordre(a_{n+1}) | p^{n+1}$. Mais $p$ étant premier, 
+    cela signifie qu'il existe $k\in \N\cap\ivc{0}{n+1}$ tel que $ \ordre(a_{n+1}) = p^k$. Clairement $k\neq 0$ car sinon $a_{n+1}=e = a_0$ et on a précisé que les $a_k$ sont tous distincts. 
+    Alors $e = \left(a_{n+1}\right)^{p^k} = \left(a_{n+1}^p \right)^{p^{k-1}}\implies e = a_n^{p^{k-1}} \implies p^n | p^{k-1} \implies n = k-1$, d'où on conclut que $k=n+1$ et donc que $ \ordre(a_{n+1}) = p^{n+1}$. CQFD.\medskip
+
+    On pourrait déduire du corollaire 3.4 que, pour tout entier $n,~ \Gr{a_n}\iso C_{p^n}$ mais cela ne garantit pas que $\bigcup\limits_{n\in \N} \Gr{a_n} \iso \bigcup\limits_{n\in \N} C_{p^n}$.
+    On va construire un isomorphisme $\theta$ à l'aide de la famille des $u_n$ de la question 3, de la façon suivante : à un $z\in C_{p^{\infty}}$, on lui associe d'abord le couple $(n,k)$ tel que 
+    \begin{itemize}
+        \item $n$ est le plus petit entier naturel tel que $z\in C_{p^n}= \Gr{u_n}$ ;
+        \item et $k$ est le plus petit entier naturel tel que $z= u_n^k$ (notons que $k< \ordre(u_n)$) ;
+    \end{itemize}
+    et enfin on pose $\theta(z) = a_n^k$, ce qui définit bien une application $\theta\colon C_{p^{\infty}} \to G$.
+
+    \emph{Montrons que $\theta$ est un morphisme}. Soient $z,w\in C_{p^{\infty}}$ et leurs couples associés $(n,i)$ et $(m,j)$ : ainsi $z= u_n^i,~ w=u_m^j$ et sans perte de généralités, on suppose que $n\leqslant m$.
+    Puisque $u_n = u_{n+1}^p = u_{n+2}^{p^2} = \cdots = u_m^{p^{m-n}}$, on a $zw = u_m^{j+ip^{m-n}}$ et on montre facilement que $(m, j+ip^{m-n})$ est le couple associé à $zw$, de sorte que $\theta(zw) = a_m^{j+ip^{m-n}}$.
+    Mais comme les $a_n$ vérifient la même propriété ($a_n = a_{n+1}^p \ldots$), on obtient $\theta(zw) = a_n^i a_m^j = \theta(z)\theta(w)$. Donc $\theta$ est bien un morphisme.
+
+    \emph{Montrons que $\theta$ est bijectif}. Puisque $\forall n\in \N,~ \theta(u_n) = a_n$ et que la famille $(a_n)_{n\in \N}$ est génératrice de $G$, $\theta$ est clairement surjectif. 
+    Soit alors $z\in \ker \theta$ et notons $(n,k)$ son couple associé : $a_n^k = e_G\implies k=0 $ (car $k < \ordre(u_n) = \ordre(a_n)$) $\implies n=0\implies z=u_0 = 1$ : ainsi $\ker \theta = \{1\}$ 
+    et $\theta$ est un morphisme injectif. CQFD.
+    
+    \item On fixe $n\in \N$. 
+    
+    \emph{Montrons que les classes $\overline{u_{n+j}}$ sont distinctes}. Soient deux entiers $i>j$ et supposons par l'absurde que $\overline{u_{n+i}} = \overline{u_{n+j}}$. Cela signifie 
+    que $u_{n+i}.C_{p^n} = u_{n+j}C_{p^n}$ et donc qu'il existe $k\in \N$ tel que $u_{n+i} = u_{n+j}u_n^k$. Or par croissance des $\Gr{u_n}$, $u_{n+j}u_n^k\in \Gr{u_{n+j}} \implies u_{n+i}\in \Gr{u_{n+j}}$. 
+    Or $i>j$ et ceci vient justement en contradiction avec la croissance pour l'inclusion des $\Gr{u_n}$. Donc les classes $\overline{u_{n+j}}$ sont distinctes.\medskip
+
+    \emph{Montrons que $\grq{C_{p^{\infty}}}{C_ {p^n}} \iso C_{p^{\infty}}$}. Ceci vient de l'application directe du résultat de la question \textit{e)}, appliquée à la partie $\left\{\overline{u_{n+j}}; j\in \N\right\}$ 
+    génératrice de $ \grq{C_{p^{\infty}}}{C_ {p^n}}$ qui possède bien les propriétés requises.
+    
+\end{enumerate}
+

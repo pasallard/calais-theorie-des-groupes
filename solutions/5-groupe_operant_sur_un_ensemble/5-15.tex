@@ -1,0 +1,24 @@
+%%% Exercice 5-15
+% PA Sallard
+\begin{enumerate}
+  \item Soit $\sigma \in S_n$ et $\gamma$ le $r$-cycle $(1,2,\ldots, r)$, où $2 \leq r \leq n$.
+
+  \emph{Sens direct} : on suppose que $\sigma$ commute avec $\gamma$. Ceci revient à dire que $\sigma \circ \gamma \circ \sigma^{-1} = \gamma$. Or d'après l'exercice III.24, $\sigma \circ \gamma \circ \sigma^{-1}$ est le $r$-cycle $\left(\sigma(1), \sigma(2),\ldots, \sigma(r)\right)$ et l'égalité précédente indique que ce cycle coincide avec le cycle $\gamma = (1,2,\ldots, r)$. On en déduit déjà que $\sigma$ laisse stable $\{1,2,\ldots, r\}$ ; et même plus, on déduit qu'il existe $k\in \{1,2,\ldots, r\}$ tel que $\sigma(1) = k$. Et puisque les deux cycles coincident, on a aussi $\sigma(2) = k+1$ (modulo $r$), etc. c'est-à-dire que la restriction de $\sigma$ à $\{1,2,\ldots, r\}$ est égale à $\gamma^k$.
+
+  Enfin, le fait que $\sigma$ laisse stable $\{1,2,\ldots, r\}$ implique que $\sigma$ laisse également stable $\{r+1,\ldots, n\}$ : ainsi, en notant $\tau = \left(\gamma^k \right)^{-1} \circ \sigma$, il vient rapidement que $\tau$ a un support dans $\{r+1,\ldots, n\}$ et notamment qu'il laisse fixe $(1,2,\ldots, r)$. CQFD.
+
+  \emph{Sens réciproque} : trivial, en arguant que fait que deux permutations à support disjoints (ici $\gamma$ et $\tau$) commutent.
+
+  Il vient alors (par dénombrement) que le nombre de permutations qui commutent avec $\gamma$ est $\card{ \{1,2,\ldots, r\}}\times \card{S_{n-r}} = r\times (n-r)\,!$.
+
+  \item On considère l'action de $G:=S_n$ sur lui-même par conjugaison : toujours avec l'exercice III.24, l'orbite $\Omega_{\gamma}$ du $r$-cycle $\gamma$ est composée de $r$-cycles. Montrons qu'elle contient tous les $r$-cycles de $S_n$. Soit alors $\gamma' = (i_1, i_2,\ldots, i_r)$ un $r$-cycle : il existe $\sigma\in S_n$ telle que $\forall k\in \{1,2,\ldots, r\}, ~\sigma(k) = i_k$ et, d'après l'exercice III.24, $\sigma\circ \gamma \circ \sigma^{-1} = \gamma'$, ce qui revient à dire que $\gamma' \in \Omega_{\gamma}$.
+
+  On peut donc affirmer que le nombre de $r$-cycles dans $S_n$ vaut $\card{\Omega_{\gamma}}$.
+
+  Enfin, le stabilisateur $G_{\gamma}$ de $\gamma$ dans l'action de $S_n$ sur lui-même par conjugaison est l'ensemble des permutations qui commutent avec $\gamma$ et on a montré dans la question précédente que $\card{G_{\gamma}} = r\times (n-r)\,!$.
+
+  On conclut avec le théorème 5.19 : $\card{\Omega_{\gamma}} = [G:G_{\gamma}] = \frac{n\,!}{r\times (n-r)\,!}$. CQFD.
+
+
+
+\end{enumerate}

@@ -1,0 +1,18 @@
+
+% P.A. Sallard
+\emph{Remarque : une formalisation rigoureuse de cet exercice très géométrique est fastidieuse et on préfère laisser parler le bon sens géométrique, en ayant en tête le résultat classique d'algèbre linéaire : toute isométrie de l'espace $\R^3$ est soit une rotation, soit une réflexion (symétrie orthogonale par rapport à un plan), soit une composée rotation-réflexion.}
+\begin{enumerate}
+\item L'application $\alpha$ (respectivement $\beta$) correspond à une rotation d'angle $\frac{\pi}{2}$ d'axe vertical (respectivement d'axe longitudinal). Ce sont donc bien deux isométries appartenant à $G$.
+\item On établit que, si $H =\Gr{\alpha, \beta}$, la $H$-orbite $\Omega_1$ du sommet 1 sous l'action de $H$ est l'ensemble des 8 sommets du cube.
+
+Cela signifie (voir par exemple la remarque 5.30) que $H$ opère transitivement sur l'ensemble des sommets du cube.
+
+\item On remarque effectivement que toute isométrie de $G$ correspond à une permutation des quatre diagonales, ce qui permet d'assimiler $G$ à un sous-groupe de $S_4$.
+
+Il est clair que l'action du groupe engendré par la rotation $\rho$ d'angle $\frac{2\pi}{3}$ autour de la diagonale $(a)$ laisse le sommet 1 invariant : ce groupe est donc contenu dans le stabilisateur $G_1$ du sommet 1. Et on concoit géométriquement qu'il n'y a pas d'autre isométrie de $G$ qui laisse 1 invariant, de sorte qu'on a bien l'égalité $G_1 = \Gr{\rho}$.
+
+On sait par la question précédente que $\card{\Omega_1} =8$ ; et d'autre par $[G\colon G_1] = \frac{\ordre(G)}{\ordre(G_1)} = \frac{\ordre(G)}{3}$. Le théorème 5.19 permet de déduire que $\ordre(G) = 8\times 3 = 24$.
+
+Puisque $G$ est assimilé à un sous-groupe du groupe $S_4$ et que $\ordre(S_4) = 4\,! = 24$, on en conclut que $G$ s'identifie au groupe $S_4$.
+\end{enumerate}
+

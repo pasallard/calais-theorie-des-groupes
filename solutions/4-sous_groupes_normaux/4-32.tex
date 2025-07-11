@@ -1,0 +1,10 @@
+%%% Exercice 4.32, Pierre-Alain Sallard
+
+\emph{Montrons que }$GA_n = S_n$. Cela revient à montrer que $S_n  \subset G A_n$.
+Notons $\tau\in G$ une des permutations impaires de $G$ et prenons $\sigma\in S_n$. Si $\sigma\in A_n$, on a évidemment $\sigma\in GA_n$.
+
+Et sinon, $\varepsilon(\sigma) = -1 \implies \varepsilon(\tau^{-1} \sigma) = 1 \implies \exists \rho \in A_n,~ \tau^{-1} \sigma = \rho \implies \sigma = \tau \rho \in GA_n$. CQFD.
+
+\emph{Montrons que $G$ contient un sous-groupe normal d'indice 2}.  Notons $\varepsilon_G = \varepsilon_{\mid G}$ la restriction à $G$ du morphisme $\varepsilon\colon S_n\to \{-1,1\}$ : alors $ \Ker \varepsilon_G \normal G$ (théorème 4.6) et de la même manière qu'en page 120, on établit que $\grq{G}{\Ker \varepsilon_G}\iso  \{-1,1\}$, \textit{i.e.} $[G:\Ker \varepsilon_G] = 2$. CQFD.
+
+\textit{N.B.} : on peut établir que $\Ker \varepsilon_G = G\cap A_n$.

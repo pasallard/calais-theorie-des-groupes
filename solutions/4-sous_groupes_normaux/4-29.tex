@@ -1,0 +1,44 @@
+%%% Exercice 4.29, Pierre-Alain Sallard
+Par hypothèse, $K \caracteristique G$ donc notamment $K\normal G$, de sorte que le groupe quotient $\grq{G}{K}$ est bien défini.
+
+\begin{enumerate}
+    \item Il s'agit d'établir le diagramme commutatif suivant :
+    $\begin{CD}
+    G @>{\alpha}>> G\\
+    @V{\pi}VV @VV{\pi}V \\
+    G/K @>{\overline{\alpha}}>> G/K
+    \end{CD}$
+    
+    
+    Étant donné $\alpha\in \Aut(G)$, on applique le lemme 4.32 avec $f =\alpha$ et  $G'=G,~ H = K,~ H' = \alpha(K) = K$ (car $K \caracteristique G$) pour obtenir 
+     l'existence d'un unique $\overline{\alpha} \in \End \left(\grq{G}{K} \right)$ tel que $\overline{\alpha}\circ \pi = \pi \circ \alpha$ (\textit{coquille de l'énoncé}).
+     Les remarques 4.33 qui suivent le lemme permettent de montrer que $ \overline{\alpha}$ est à la fois surjectif et injectif, de sorte qu'on a bien $\overline{\alpha} \in \Aut \left(\grq{G}{K} \right)$.
+
+    \item Étant donnés $\alpha, \beta \in \Aut(G)$, on établit que $\left(\overline{\alpha}\circ \overline{\beta}\right) \circ \pi = \pi \circ \left(\alpha\circ \beta \right)$ : 
+    l'unicité montrée au point précédent assure alors que $ \overline{\alpha}\circ \overline{\beta} = \overline{\alpha \circ \beta}$, \textit{i.e.} $\Phi(\alpha) \circ \Phi(\beta) = \Phi(\alpha\circ \beta)$. 
+    Ainsi $\Phi$ est bien un morphisme de groupes.
+
+    \item On a $H\leq G$ tel que $K\subset H$, de sorte que le groupe quotient $\grq{H}{K} = \pi(H)$ est bien défini et est un sous-groupe de $\grq{G}{K}$.
+    
+    \emph{Montrons que $\grq{H}{K} \caracteristique \grq{G}{K}  \implies H  \caracteristique G$ }. On suppose donc que $\grq{H}{K} \caracteristique \grq{G}{K} $ et on se donne $\alpha \in \Aut(G)$ :
+     il s'agit de montrer que $\alpha(H) = H$. 
+
+    Puisque $K  \caracteristique G$, on a notamment  $\alpha(K) = K$. Ainsi  $K\subset H \implies K = \alpha(K) \subset \alpha(H)$ : ainsi, $\alpha(H)$ est un sous-groupe de $G$ contenant K.
+
+    
+   Appliquons maintenant l'hypothèse : $\overline{\alpha} \in \Aut \left(\grq{G}{K} \right) \implies \overline{\alpha}\left(\grq{H}{K}  \right) = \grq{H}{K}$. c'est-à-dire $\overline{\alpha} \circ \pi(H) = \grq{H}{K}$.
+    Ainsi $\pi \circ \alpha(H) = \grq{H}{K}$. Mais on a aussi $\pi(H) = \grq{H}{K}$. Or le théorème 4.28 assure que $\grq{H}{K}$ est l'image par $\pi$ d'un unique sous-groupe de $G$ contenant $K$. 
+    Comme $H$ et $\alpha(H)$ vérifient tous deux cette propriété, on conclut que $\alpha(H) = H$. CQFD.
+
+    \emph{Montrons que la réciproque est fausse}. Comme indiqué, on prend $G=D_4$ le groupe d'ordre 8 : avec les notations de la proposition 3.74, on a  $D_4 = \Gr{a}\Gr{b}$ avec $\ordre(a)=4$ et $\ordre(b)=2$.
+    On prend ensuite $K=Z(D_4)$ : par la proposition 4.43, $K \caracteristique G$ et d'après l'exercice 4.20, $Z(D_4)=\{e, a^2\}$. Puis on prend $H = \Gr{a} = \Gamma_4$ l'unique sous-groupe (cyclique) de $D_4$ d'ordre 4. 
+
+    On a clairement $K\subset H$ et on va montrer que $H \caracteristique G$ en prenant un automorphisme $\alpha$ de $D_4$ : par transport de structure, $\alpha(H) = \alpha(\Gamma_4)$ est un sous-groupe 
+    d'ordre 4 de $D_4$. Or il n'y a qu'un seul sous-groupe de $D_4$ d'ordre 4 donc $\alpha(H) = H$ : la propriété est donc établie.
+
+    Montrons maintenant qu'il existe $\alpha \in \Aut\left(\grq{G}{K}\right)$  tel que $\alpha\left( \grq{H}{K}\right) \neq \grq{H}{K}$. Ici, $\grq{G}{K} = \grq{D_4}{Z(D_4)} = \Gr{\cl{a}} \Gr{\cl{b}}$ est isomorphe à $D_2$ (d'après l'exercice 4.20, donc aussi isomorphe au groupe de Klein : cf p.124), 
+    donc avec $\ordre({\cl{a}})= \ordre({\cl{b}}) = 2$. Et $\grq{H}{K}$ est le sous-groupe $\grq{\Gamma_4}{\Z(D_4)} = \{\cl{e}, \cl{a}\}$. Définissons $\alpha\colon \grq{G}{K}\to \grq{G}{K}$ par $\alpha(\cl{a}) = \cl{b}$, 
+    $\alpha(\cl{b}) = \cl{a}$ et $\alpha$ qui laisse stable $\cl{e}$ ainsi que $\cl{ab}$. C'est clairement une bijection et on établit que c'est bien un morphisme de groupe en vérifiant que $\alpha(xy) = \alpha(x)\alpha(y)$ pour les 
+    différentes valeurs possibles (il n'y en a pas beaucoup) de $x$ et $y$. Ainsi on a bien $\alpha \in \Aut\left(\grq{G}{K}\right)$ mais $\alpha\left( \grq{H}{K}\right) =  \Gr{\cl{b}} \neq  \grq{H}{K}$. CQFD.
+
+\end{enumerate}

@@ -1,0 +1,22 @@
+
+% P.A. Sallard
+\emph{Contrairement à ce qu'on pouvait attendre, on n'a pas besoin ici du lemme 5.41.}
+\begin{enumerate}
+\item Avec les notations du texte,
+\begin{align*}
+ xH \in E_H & \iff \forall h\in H,~ h (xH) = xH\\
+ & \iff \forall h\in H,~ x^{-1}hx H = H \\
+ & \iff \forall h\in H,~ x^{-1}hx \in H \iff x \in N_G(H)
+\end{align*}
+On sait que $N_G(H)$ est un sous-groupe de $G$ (voir remarque après la définition 4.21) contenant $H$ et l'équivalence précédente assure que $xH \in \left(\grq{N_G(H)}{H}\right)_g \iff xH \in E_H$ et donc notamment que $\card{E_H} = [N_G(H) \colon H]$.
+
+D'après le lemme 5.40 appliqué au groupe $H$ agissant sur $E,~ \card{E_H} \equiv \card{E}~ [p]$. Or $card{E} = [G\colon H] \equiv 0~ [p]$ par hypothèse donc il vient que $[N_G(H) \colon H]\equiv 0~ [p]$. CQFD.
+
+\item On sait par la proposition 4.23 que $H\normal N_G(H)$, ce qui est plus fort que demandé par le texte.
+
+On est bien dans les conditions de la question précédente puisqu'on a ici $[G\colon H] = \frac{p^n}{p^{n-1}} = p$ qui est divisible par $p$. On peut donc affirmer que $p$ divise $[N_G(H) \colon H]$.
+
+Mais $[N_G(H) \colon H] \leqslant [G\colon H] = p$ donc nécessairement $[N_G(H) \colon H] = p$, d'où $\ordre(N_G(H)) = p\times p^{n-1} = \ordre(G)$. De l'inclusion $N_G(H) \subset G$, on déduit que $N_G(H) = G$, ce qui signifie bien que $H$ est normal dans $G$ (théorème 4.22).
+
+\end{enumerate}
+

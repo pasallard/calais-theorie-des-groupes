@@ -1,0 +1,20 @@
+%%% Exercice 5-24
+% PA Sallard
+
+
+\begin{enumerate}
+ \item \emph{On vérifie les trois points de la définition 5.48 d'un produit semi-direct d'un sous-groupe normal par un autre sous-groupe} :
+ \begin{itemize}
+  \item Puisque $K:= \Ker \lambda$, on a déjà $K\normal G$.
+  \item Soit $g\in G$ : on a l'égalité $g = \left(g\lambda(g)^{-1}\right)\lambda(g)$, avec $\lambda(g) \in L:= \im \lambda$. On montre que $g\lambda(g)^{-1} \in K$ : en effet, $g\lambda(g)^{-1} = g\lambda(g^{-1})$ donc $\lambda\left(g\lambda(g)^{-1}\right) = \lambda(g)\lambda^2(g^{-1}) = \lambda(g)\lambda(g^{-1})$ (car $\lambda^2 = \lambda$) $=\lambda(g)\lambda(g)^{-1} = e$. Ainsi, $G\subset KL$ et l'inclusion réciproque est triviale.
+  \item Soit $g\in K\cap L$ : puisque $g\in L,~ \exists x\in G,~ g = \lambda(x)$, d'où $\lambda(g) = \lambda^2(x) = \lambda(x)$. Or $\lambda(g) = e$ car $g\in K$ donc $\lambda(x) = e$. Mais $\lambda(x) = g$ donc $g=e$ : ainsi $K\cap L = (e)$.
+ \end{itemize}
+
+ \item On vient d'établir que tout élément de la forme $g\lambda(g^{-1})$ appartient à $K$, donc $\Gr{\{g\lambda(g^{-1}), g\in G\} } \subset K$. Et pour $x\in K$, on a clairement l'égalité $x = x\lambda(x^{-1})$ car $\lambda(x^{-1}) = \lambda(x)^{-1}=e$ : d'où l'inclusion réciproque. Ainsi $K$ est bien le sous-groupe normal engendré par $\{g\lambda(g^{-1}), g\in G\}$.
+
+
+
+\end{enumerate}
+
+
+

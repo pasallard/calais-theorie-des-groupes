@@ -1,0 +1,16 @@
+%%% Exercice 5-16
+% PA Sallard
+\emph{On va suivre la même démarche que dans l'exercice précédent}.
+
+Notons $\gamma = (1,2)(3,4) \in S_n$.
+\begin{enumerate}
+  \item Soit $\sigma \in S_n$ : on établit facilement que $\sigma \circ \gamma \circ \sigma^{-1} =\left(\sigma(1),\sigma(2)\right)\left(\sigma(3),\sigma(4)\right)$.
+
+
+  Supposons que $\sigma$ commute avec $\gamma$, c'est-à-dire que $\left(\sigma(1),\sigma(2)\right)\left(\sigma(3),\sigma(4)\right) = (1,2)(3,4)$. La même analyse que ci-dessus conduit alors à la décomposition $\sigma = p \circ \tau$ où $\tau \in S_n$ laisse fixe les entiers supérieurs à 4 et où $p\in S_n$ est l'une des huit permutations suivantes : l'identité $e$, une transposition $(1,2)$ ou $(3,4)$, la permutation circulaire $c=\begin{pmatrix}1&2&3&4\\3&4&1&2                                                                                                                                                                                                                                                        \end{pmatrix}$ ou l'une des composées $(1,2)(3,4)=\gamma$, $(1,2)\circ c$, $(3,4)\circ c$ et $\gamma\circ c$.
+
+  Et notamment, le nombre de permutations qui commutent avec $\gamma$ vaut $8\times (n-4)\,!$.
+
+  \item On conclut comme précedemment que le nombre de conjugués de $\gamma$ dans $S_n$ vaut  $\frac{n\,!}{8\times (n-4)\,!} = \frac{n(n-1)(n-2)(n-3)}{8}$.
+
+\end{enumerate}

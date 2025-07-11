@@ -1,0 +1,26 @@
+%%% Exercice 5-22
+% PA Sallard
+
+
+Par hypothèse, il existe un isomorphisme $f$ de $N_1$ dans $N_2$.
+
+D'après l'exercice 1.32, l'application $f_\sharp\colon\Aut(G_1)\to\Aut(G_2)$ définie par $f_\sharp(\psi) = f\circ\psi\circ f^{-1}$ est un isomorphisme.
+
+On a donc le diagramme commutatif suivant, pour $\psi \in \Aut(G_1)$  :  \hspace{1cm}  $\begin{CD}
+    N_1 @>{f}>> N_2\\
+    @V{\psi}VV @VV{f\circ\psi\circ f^{-1}}V \\
+    N_1 @>{f}>> N_2
+    \end{CD}$
+
+On définit $\tilde{f}\colon\Hol(N_1)\to \Hol(N_2)$ par :
+\[\forall (x,\psi)\in N_1 \ltimes_{\epsilon} \Aut(N_1),~ \tilde{f}\left((x,\psi)\right) = \left(f(x),f_\sharp(\psi) \right) \]
+
+Montrons que c'est un morphisme de groupes : pour $ (x_1,\psi_1),~ (x_2,\psi_2) \in N_1 \ltimes_{\epsilon} \Aut(N_1)$,
+\begin{itemize}
+ \item $\tilde{f}\left(  (x_1,\psi_1) (x_2,\psi_2)\right) = \tilde{f}\left( x_1\psi_1(x_2), \psi_1\psi_2\right) = \left(f(x_1)f\circ\psi_1(x_2), f\psi_1\psi_2f^{-1} \right)$ (car $f$ est un morphisme) ;
+  \item $\tilde{f}\left(x_1,\psi_1\right)\tilde{f}\left(x_2,\psi_2\right) = \left(f(x_1),f\psi_1f^{-1}\right)\left(f(x_2),f\psi_2f^{-1}\right) = \left(f(x_1)f\circ\psi_1(x_2), f\psi_1\psi_2f^{-1} \right)$ (après simplication)
+\end{itemize}
+ce qui montre bien que  $\tilde{f}\left(  (x_1,\psi_1) (x_2,\psi_2)\right) = \tilde{f}\left((x_1,\psi_1)\right)\tilde{f}\left((x_2,\psi_2)\right)$.\medskip
+
+Le fait que $f$ et $f_\sharp$ soient bijectifs implique que $\tilde{f}$ l'est également. CQFD.
+

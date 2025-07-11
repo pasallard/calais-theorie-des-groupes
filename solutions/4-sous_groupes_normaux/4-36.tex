@@ -1,0 +1,27 @@
+%%% Exercice 4.36, Pierre-Alain Sallard
+\emph{Rappel (même hors de la théorie des groupes)} : si on se donne une application $f\colon E\to F$ et deux parties $A\subset B\subset F$, alors $f^{-1} \langle A\rangle \subset f^{-1} \langle B\rangle$ où
+$f^{-1} \langle A\rangle$ désigne l'ensemble des antécédents de $A$ par $f$.
+
+\begin{enumerate}
+\item \emph{Sens direct} : on suppose que $\grq{M}{H}$ maximal dans $\grq{G}{H}$ et on se donne $K$ tel que $M\leqslant K\leqslant G$. En prenant leurs images par la projection canonique $\pi\colon G\to \grq{G}{H}$, 
+il vient que $\grq{M}{H} \leqslant \grq{K}{H} \leqslant \grq{G}{H}$. La maximalité de $\grq{M}{H}$ implique que $ \grq{K}{H}=  \grq{G}{H}$ ou bien $ \grq{K}{H} =  \grq{M}{H}$. Dans le premier cas, 
+on a nécessairement $K=G$. Dans le second cas, on a $\pi(K) = \pi(M)$ mais le théorème 4.28 appliqué à ce sous-groupe $ \pi(M)$ assure l'existe d'un unique sous-groupe $K'$ contenant $H$ tel que $\pi(K') = \pi(M)$ ; puisque 
+$H\leqslant M$, cet unique sous-groupe est $M$ et on déduit que $K=M$. Ceci prouve que $M$ est maximal dans $G$.
+
+\emph{Sens réciproque} : on suppose que $M$ est maximal dans $G$ et on se donne $\overline{K}$ tel que $\grq{M}{H} \leqslant \overline{K} \leqslant \grq{M}{H}$. Le même théorème 4.18 assure donc
+l'existence d'un unique $K$ tel que $H\leqslant K\leqslant G$ tel que $\pi(K) =  \overline{K}$. On a donc $\pi(M) \leqslant \pi(K) \leqslant \pi(G)$, et le rappel effectué en introduction 
+donne que $M \leqslant K \leqslant G$. La maximalité de $M$ assure alors que $K=M$ ou $K=G$, ce qui implique que $\overline{K} = \grq{M}{H}$ ou $\overline{K} = \grq{G}{H}$. On obtient bien la maximalité de $\grq{M}{H}$.
+
+\item On sait que tous les sous-groupes de $\Z$ sont de la forme $n\Z$, avec $n\in \N$. Et si $p$ est un nombre premier, $p\Z$ est maximal dans $Z$ (en vertu de la proposition 4.54, ou bien par preuve directe).
+
+Soit un entier $n>1$ : notons $p$ un diviseur premier de $n$. Alors $n\Z \subset p\Z$, d'où le résultat : tout sous-groupe propre de $\Z$ est contenu dans un sous-groupe maximal de $\Z$.
+
+Et d'après la question 1, les sous-groupes maximaux de $\grq{\Z}{n\Z}$ sont de la forme $\grq{\Z}{p\Z}$, où $p$ est un diviseur premier de $n$.
+
+\item Puisque $(\Q,+)$ est abélien, tout sous-groupe de $\Q$ est normal. Supposons qu'il existe un sous-groupe $K\leqslant \Q$ maximal : d'après la proposition 4.54, $\grq{\Q}{K}$ est cyclique (d'ordre premier), et donc notamment c'est un sous-groupe fini.
+Or l'exercice 4.14 a montré que $\grq{\Q}{K}$ est infini. D'où la contradiction : $\Q$ n'admet pas de sous-groupe maximal.
+
+\item Soit $K$ un sous-groupe propre de $C_{p^{\infty}}$. D'après la question c) de l'exercice 34, il existe $n \in \N$ tel que $K = C_{p^n}$.
+Or $K = C_{p^n} \subsetneq C_{p^{n+1}}$ (suite croissante de sous-groupes) donc $K$ ne peut pas être maximal. Ainsi $ C_{p^{\infty}}$ n'admet pas de sous-groupe maximal.
+
+\end{enumerate}

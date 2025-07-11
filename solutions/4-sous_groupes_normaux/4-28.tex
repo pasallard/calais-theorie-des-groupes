@@ -1,0 +1,10 @@
+%%% Exercice 4.28, Pierre-Alain Sallard
+Dans cet exercice, on note $\text{Conj}(x) = \{gxg^{-1} ; g\in G\}$ la classe de conjugaison d'un élément $x \in G$, de sorte que $F:= \{x\in G ; \card{\text{Conj}(x) } < +\infty\}$.
+
+\emph{On montre d'abord que $F$ est un sous-groupe de $G$}. Soit $x\in F:~ \forall g\in G,~ gx^{-1}g^{-1} = \left(gxg^{-1}\right)^{-1}$ donc $\text{Conj}(x^{-1})\subset f\left(\text{Conj}(x)\right)$ où $f\colon a\in G\mapsto a^{-1}$. Puisque $f$ est (un morphisme) bijectif, on a clairement $\card{f\left(\text{Conj}(x) \right)} < +\infty$, d'où  $\card{\text{Conj}(x^{-1}) } < +\infty$. Ainsi $x^{-1} \in F$.
+
+Soient maintenant $x,y\in F :~ \forall g\in G, gxyg^{-1} = (gxg^{-1})(gyg^{-1})$ donc $\text{Conj}(xy)\subset \text{Conj}(x) \text{Conj}(y)$. Ces deux ensembles étant finis, il en va de même de leur produit (tel que défini en page 37) : ainsi $\card{\text{Conj}(xy) } < +\infty$ et $xy\in F$. CQFD.
+
+\emph{On montre ensuite que $F\caracteristique G$}. Soit $\alpha \in \Aut(G)$ et $x\in F :~ \text{Conj}\left(\alpha(x)\right) = \{g\alpha(x)g^{-1}; g\in G\}$ ~ $ = \{\alpha\left(\alpha^{-1}(g)x \alpha^{-1}(g) \right); g\in G \} \subset \alpha\left(\text{Conj}(x) \right)$. Puisque $ \card{\text{Conj}(x) } < +\infty$ et que $\alpha$ est bijectif, il vient que $ \card{\text{Conj}\left(\alpha(x)\right) } < +\infty$, \textit{i.e.} $\alpha(x) \in F$. On en déduit que $\alpha(F) \subset F$.
+
+Ce raisonnement appliqué à $\alpha^{-1}$ donne $\alpha^{-1}(F) \subset F$ d'où l'inclusion réciproque $F\subset \alpha(F)$. On conclut donc que $\alpha(F) = F$, ce qui est la définition de la propriété $F\caracteristique G$.

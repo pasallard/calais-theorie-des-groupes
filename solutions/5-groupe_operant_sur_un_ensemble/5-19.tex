@@ -1,0 +1,24 @@
+%%% Exercice 5-19
+% PA Sallard
+
+\begin{enumerate}
+  \item Soit $(x,y)\in E^2$ : en appliquant la $k$-transitivité aux $k$-tuples $(x,x,\ldots,x)$ et $(y,y,\ldots, y)$, il existe $g \in G$ tel que $gx = y$. Ceci établit donc la transitivité de $G$ sur $E$.
+  \item \emph{Sens direct} : on suppose que $G$ est $k$-transitif sur $E$ et on se donne $x\in E$. Soient $(x_1,\ldots, x_{k-1})$ et $(y_1,\ldots, y_{k-1})$ des $(k-1)$-tuples de $E\setminus\{x\}$ : en appliquant la $k$-transitivité de $G$ aux $k$-tuples  $(x_1,\ldots, x_{k-1},x)$ et $(y_1,\ldots, y_{k-1},x)$, il existe $g\in G$ tel que $gx=x$ et $gx_i = y_i$, pour $1\leq i\leq k-1$. La première égalité assure que $g\in G_x$ ; et la seconde égalité donne donc la $(k-1)$-transitivité de $G_x$ sur $E\setminus\{x\}$.
+
+  \emph{Sens réciproque} : on suppose que, pour tout $x\in E,~ G_x$ est $(k-1)$-transitif sur $E\setminus\{x\}$.Soient $(x_1,\ldots, x_{k})$ et $(y_1,\ldots, y_{k}) \in E^k$. On va appliquer deux fois l'hypothèse :
+  \begin{itemize}
+   \item d'abord à $x=x_k$ et aux $(k-1)$-tuples $(x_1,\ldots, x_{k-1})$ et $(y_1,\ldots, y_{k-1})$ de $E\setminus\{x_k\}$ : il existe $g\in G_{x_k}$ tel que $gx_i = y_i$, pour $1\leq i\leq k-1$ ; et par définition, on a aussi $gx_k = x_k$.
+   \item et ensuite à $x=y_1$ et aux $(k-1)$-tuples $(y_2,\ldots, y_{k-1},x_k)$ et $(y_2,\ldots, y_{k-1},y_k)$ de $E\setminus\{y_1\}$ :  il existe $g'\in G_{y_1}$ tel que $g'y_i = y_i$, pour $2\leq i\leq k-1$ et  $g'x_k = y_k$ ; et par définition, on a aussi $g'y_1 = y_1$.
+  \end{itemize}
+  On pose alors $\tilde{g} = g' g$ : on vérifie que, par construction, $gx_i = y_i$, pour $1\leq i\leq k$. CQFD.
+
+  \item D'après la première question, $G$ est transitif sur $E$ donc il n'y a qu'une seule $G$-orbite (définition 5.29) : le nombre $t$ de l'exercice 17 vaut donc 1 et la formule de Burnside s'écrit alors $\card{G} =\sum\limits_{g\in G} \card{F(g)}$.
+
+  Pour un $x\in E$ quelconque, $G_x$ est $(k-1)$-transitif sur $E\setminus\{x\}$ donc il y a une seule $G_x$-orbite dans $E\setminus\{x\}$. Donc dans $E$ tout entier, en rajoutant le singleton $\{x\}$, il y a 2 $G_x$-orbites. Ainsi, le nombre $r$ de l'exercice 18 vaut 2 et on en tire l'égalité
+         \[
+          2 \card{G} = \sum_{g\in G} \card{F(g)}^2.
+        \]
+
+
+  Toujours pour un $x\in E$ quelconque, on a $\card{\Omega_x} = [G:G_x]$ (théorème 5.19). Mais comme $G$ est transitif, $\card{\Omega_x} = \card{E} = n$. On en déduit donc que $\card{G} = n \card{G_x}$. On répète cette démarche avec $G_x$ qui est $(k-1)$-transitif sur l'ensemble $E\setminus\{x\}$ de cardinal $n-1$ : et par itérations successives, on aboutit à une égalité de la forme $\card{G} =n(n-1)\cdots(n-k+1)\card{G_z}$, ce qui prouve le résultat attendu.
+\end{enumerate}

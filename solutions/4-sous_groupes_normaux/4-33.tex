@@ -1,0 +1,19 @@
+%%% Exercice 4.33, Pierre-Alain Sallard
+$G$ est un groupe fini, abélien, d'ordre pair.
+
+\begin{enumerate}
+    \item Si $\ordre(G) = 2$, alors $G\iso \grq{\Z}{2\Z}$ serait abélien. Et si $\ordre(G) = 4$, alors soit $G\iso \grq{\Z}{4\Z}$ (cas où il existe $x\in G$ d'ordre 4) 
+    soit $G\iso \grq{\Z}{2\Z}\times\grq{\Z}{2\Z}$ (cas où tous les éléments de $G$ sont d'ordre $\leqslant 2$) : dans les deux cas, $G$ serait abélien, ce qui est exclu.
+    Il vient donc que $\ordre(G) > 4$.
+
+    \item Si on avait $B=\emptyset$, alors $G=A$ serait abélien d'après le résultat de l'exercice I.5, ce qui est exclu. Ainsi $B\neq \emptyset$.
+    
+    Soit alors $x\in B$ : clairement $x^{-1} \in B$ et $x^{-1}\neq x$, par définition de $B$. Ainsi on peut regrouper les éléments de $B$ par couple, ce qui justifie que $\card{B}$ est pair (et non nul).
+
+    On sait que $e\in A$ donc $ \card{A} \geqslant 1$. Et puisque $\card{A} = \ordre(G) - \card{B}$ est pair, il vient que $\card{A} \geqslant 2$.
+
+    Ainsi $\exists x\in A,~ x\neq e$ et par définition de A, $\ordre(x) = 2$. CQFD.
+
+\end{enumerate}
+
+\emph{Remarque :  je ne vois pas le lien entre cet exercice et les sous-groupes normaux}.

@@ -1,0 +1,78 @@
+%%% Exercice 4.35, Pierre-Alain Sallard
+\emph{Rappel} : avec les notations de l'énoncé, $D_{\infty} = \left\{ \tau_n,~ \tau_n\circ \sigma;n\in \Z\right\}$, \textit{i.e.} $D_{\infty}=\Gr{\tau_1}\Gr{\sigma}$, 
+et on a $\tau_n\circ \tau_m = \tau_{n+m}$, $(\tau_n\circ\sigma)\circ \tau_m = \tau_{n-m} \circ \sigma$  et $\left(\tau_n\circ \sigma\right)\circ \left(\tau_m\circ \sigma\right) = \tau_{n-m}$.
+Ainsi, dans $D_{\infty}$, 
+\begin{itemize}
+    \item $\tau_0=\id = e$ est d'ordre 1 ;
+    \item pour $n\neq 0$, tous les $\tau_n\circ \sigma$  sont d'ordre 2 ;
+    \item et pour $n\neq 0$, tous les $\tau_n$ sont d'ordre infini.
+\end{itemize}
+
+\begin{enumerate}[1)]
+\item L'ensemble $H=\Gr{\tau_1}$ est clairement un sous-groupe monogène infini de $D_{\infty}$. Ses seules classes à droite sont $\cl{\tau_0}$ et $\cl{\sigma}$ donc $[D_{\infty}:H] = 2]$ ; et tout élément
+de $D_{\infty}\setminus H$ est de la forme $\tau_n\circ \sigma$ avec $n \neq 0$ donc un tel élément est bien d'ordre 2.
+
+\emph{Montrons que $H$ est le seul sous-groupe ayant ces propriétés} : soit $K$ un sous-groupe de $D_{\infty}$ ayant ces propriétés. Puisque $[D_{\infty}:K] = 2$, il existe $\theta \in D_{\infty}$ tel que 
+$D_{\infty} = K \cup K \theta$ (union disjointe des deux classes à droite modulo $K$). Tous les éléments de $K \theta = D_{\infty}\setminus K$ sont d'ordre 2 donc $D_{\infty}\setminus K \subset \left\{ \tau_n\circ \sigma;n\in \Z^*\right\}$. 
+Et par conséquent $H =  \left\{ \tau_n ;n\in \Z\right\} \subset K$. D'après la formule des indices (théorème 2.18), on a donc $[D_{\infty}:H] = [D_{\infty}:K][K:H]$, d'où il vient que $[K:H] = 1$ : ceci équivaut à dire que $K=H$, 
+d'où l'unicité recherchée.\medskip
+
+\emph{Montrons que $H$ est normal maximal dans $D_{\infty}$}. Par la proposition 4.14, $[D_{\infty}:H] = 2]\implies H\normal D_{\infty}$. Puisqu'alors $\grq{D_{\infty}}{H}\iso \grq{\Z}{2\Z}$ est 
+un groupe simple, la proposition 4.52 permet de conclure que $H$ est normal maximal.
+
+\item \begin{enumerate}
+    \item $H=\Gr{\tau_1}$ est un sous-groupe monogène infini donc $H\iso \Z$ (théorème 3.3) : par transport de structure, tout sous-groupe de $H$ est de la forme $H_n := \Gr{\tau_1^n}$, pour un certain $n\in \N$. 
+    Et toujours par transport de structure, pour $n\neq 0,~ \grq{H}{H_n} \iso \grq{\Z}{n\Z} \iso C_n$ (groupe cyclique d'ordre $n$).
+    \item Pour tout $n\in \N,~ H_n \normal H$ (car $H$ est abélien) mais on ne peut pas conclure immédiatement que $H_n\normal D_{\infty}$ (cf remarque 4.11). On revient à la caractérisation des sous-groupes normaux : 
+    soit $h=t_1^{nk}\in H_n$ et $x\in D_{\infty}$. Alors ou bien $x = \tau_1^p$ et alors $xhx^{-1} = \tau_1^{p+nk-p} = \tau_1^{nk}\in H_n$ ; ou bien $x=\tau_1^p \circ \sigma = \sigma\circ \tau_1^{-p}$ et alors $x^{-1} = x$ et 
+    $xhx^{-1} = \sigma\circ \underbrace{\tau_1^{-p} \circ \tau_1^{nk} \circ \tau_1^p}_{= \tau_1^{nk}} \circ \sigma = \tau_1^{-nk}\circ \sigma^2 = \tau_1^{-nk} \in H_n$. Dans les deux cas, on a bien $xhx^{-1} \in H_n$, ce qui 
+    permet de conclure que $H_n$ est normal dans $D_{\infty}$.\medskip
+
+    Soit $n\geqslant 2$ et  notons $\pi_n\colon D_{\infty}\to \grq{D_{\infty}}{H_n}$ le morphisme surjectif canonique. Puisque $D_{\infty}$ est engendré par $\tau_1$ et $\sigma$, $\grq{D_{\infty}}{H_n}$ est 
+    engendré par $a:= \pi_n(\tau_1)$ et $b:=\pi_n(\sigma)$. Grâce aux propriétés du morphisme, on établit facilement que $\ordre(a) = n,~ \ordre(b) = \ordre(ab) = 2$ : la proposition 3.74 permet alors 
+    de conclure que $\grq{D_{\infty}}{H_n} \iso D_n$.\medskip
+
+    Et pour $n=1$,~ $H_1 = H$ et on a déjà vu que $\grq{D_{\infty}}{H}\iso \grq{\Z}{2\Z} \iso C_2$.
+    \item Soit $H'$ sous-groupe d'ordre 2 de $D_{\infty}$ et notons $\theta$ l'unique élément d'ordre 2 de $H'$ : d'après la remarque préliminaire, il existe $n\in \Z^*$ tel que $\theta = \tau_1^n\circ \sigma$.
+    
+    Soit $x\in D_{\infty}$ : alors ou bien $x = \tau_1^p \in H \implies x\in \subset HH'$ ; ou bien $x=\tau_1^p \circ \sigma = \tau_1^{p-n} \circ \theta \in HH'$. Ainsi $D_{\infty}\subset HH'$, et l'inclusion réciproque est triviale.
+\end{enumerate}
+
+\item \begin{enumerate}
+    \item Puisque $K$ est un sous-groupe de $D_{\infty}$ non inclus dans $H$, il contient au moins un élément $\theta$ d'ordre 2 (de la forme $\tau_1^n\circ \sigma$). 
+    Alors, avec le point précédent, $D_{\infty} = H\Gr{\theta} \subset HK \subset D_{\infty}$, donc on a bien $D_{\infty} = HK$.
+    
+    Le deuxième théorème d'isomorphisme (théorème 3.34) assure par ailleurs que $\grq{K}{H\cap K} \iso \grq{HK}{H}$. Puisque $HK=D_{\infty}$ et que $[D_{\infty}:H] = 2$, on obtient par isomorphisme que $[K:H\cap K] = 2$.
+    
+    \item \emph{On traite simultanément les points 3b et 3c, sans faire intervenir le résultat du point 1}. Puisque $K\cap H$ est un sous-groupe de $H$, il est d'après le point 2 de la forme $H_n$, pour un certain $n\in \N$.
+    
+    Si $K\cap H\neq \{e\}$, alors $n\geqslant 1$ et $K\cap H = H_n$ est monogène infini, engendré par $\tau_1^n$, de sorte que $H_n = \Gr{\tau_1^n}$. Par ailleurs, puisque  $[K:H\cap K] = 2$, il n'y a que deux classes d'équivalences modulo $H\cap K$ 
+    et il existe donc $\theta \in K$ tel que $K = H_n \cup H_n \theta$ (union disjointe). On voit donc que $K = \Gr{\tau_1^n}\Gr{\theta}$ : or $D_{\infty}=\Gr{\tau_1}\Gr{\sigma}$, ce qui permet de mettre en place 
+    un isomorphisme entre $K$ et $D_{\infty}$.
+
+    \item \emph{Déjà établi au point précédent}.
+    \item Étant donné $G$ un sous-groupe propre de $D_{\infty}$, on a deux cas possibles : soit $G\subset H$, soit $G\not\subset H$. Dans le premier cas, $G$ est d'après le point 2 de la forme $H_n$ avec $n\neq 0$, qui lui-même est isomorphe à $\Z$ (car monogène infini).
+    Dans le second cas, et d'après le point 3, si $G\cap H \neq \{e\}$, alors $G \iso D_{\infty}$. Et enfin si $G\cap H =\{e\}$, le fait que $[G:\{e\}] = 2$ implique que $G$ est réduit à deux éléments et qui est donc isomorphe à $C_2$. CQFD.
+\end{enumerate}
+\item Soit $K\in \mathcal{K}_n$. D'après le point 3b ci-dessus, $\exists \theta \in D_{\infty}\setminus H$ tel que $K = H_n \Gr{\theta}$. Puisque $\theta \not\in H$, $\theta$ est de la forme $\tau_1^p \sigma$ :
+ notons alors $r\in \{0,1,n-1\}$ le reste de $p$ dans la division par $n$. Puisque $\theta = \underbrace{\tau_1^{nq}}_{\in H_n} \tau_1^r \sigma$, on montre facilement que $H_n \Gr{\theta} = H_n \Gr{\tau_1^r \sigma}$. Ainsi 
+ $\mathcal{K}\subset \left\{H_n \Gr{\tau_1^r \sigma}; 0\leqslant r< n \right\}$.
+
+ L'inclusion réciproque se montre sans difficulé, ce qui prouve que $\card{\mathcal{K}_n} = n$. 
+
+\item Si $n=1$, alors $K\in \mathcal{K}_1\iff K = H\Gr{\sigma} = D_{\infty}$ et on a alors évidemment $K\normal D_{\infty}$. Et si $n=2$, alors $K\in \mathcal{K}_1\iff K = H_2\Gr{\sigma}$ ou 
+$K = H_2\Gr{\tau_1 \sigma}$. On va montrer que, dans chacun de ces deux cas, $K$ est d'indice deux dans $D_{\infty}$, ce qui justifiera par la proposition 4.14 que $K\normal D_{\infty}$. 
+Prenons le cas où $K = H_2\Gr{\sigma}$ : alors $x\in D_{\infty} \implies x\in K$ ou $x\in \tau_1 K$ (en reprenant l'écriture de $x$ sous l'un des deux formes $\tau_1^k$ ou $\tau_1^k\sigma$), donc il n'y a bien que deux classes d'équivalence (à gauche) modulo $K$. Et de même 
+dans le cas où $K = H_2\Gr{\tau_1 \sigma}$ : alors $x\in D_{\infty} \implies x\in K$ ou $x\in \tau_1 K$. CQFD.
+
+Réciproquement, soit $K\in \mathcal{K}_n$ tel que $K\normal D_{\infty}$. $K$ est de la forme $H_n\Gr{\tau_1^r \sigma}$ avec $0\leqslant r< n$. Prenons $x=\tau_1 \in D_{\infty}$ et $k = \tau_1^r \sigma \in K$ : $K\normal D_{\infty} \implies 
+xkx^{-1} = \tau_1 \tau_1^r \sigma \tau_{-1}  = \tau_1^{2} \tau_1^r\sigma \in K = H_n\Gr{\tau_1^r \sigma} \implies \tau_1^2 \in H_n \implies n=\{1;2\}$. CQFD.\medskip
+
+
+Si $K$ est un sous-groupe \emph{propre} normal de $D_{\infty}$, il est soit un sous-groupe de $H$ (point 2), soit un sous-groupe ne contenant pas $H$ donc appartenant à un des ensembles $\mathcal{K}_n$, mais avec $n=2$ d'après le point ci-dessus 
+(le cas $n=1$ est éliminé car alors $K=D_{\infty}$ n'est pas un sous-groupe propre). Or on a bien vu que $\mathcal{K}_2$ est constitué de deux sous-groupes d'indice 2, isomorphes à $D_{\infty}$ d'après le point 3b.\medskip
+
+Si $f\colon D_{\infty}\to G$ (avec $G$ un groupe quelconque) est un morphisme de groupe, alors $\im f \iso \grq{D_{\infty}}{\ker f}$ où $\ker f \normal D_{\infty}$. Si $\ker f$ est sous-groupe \emph{propre}, 
+alors d'après le point précédent c'est soit l'un des $H_n$ avec $n\geqslant 2$, soit un sous-groupe d'indice 2 ($H$ ou l'un des deux éléments de $\mathcal{K}_2$). 
+Avec le point 2, on conclut que, dans le premier cas, l'image holomorphe de $D_{\infty}$ est, à isomorphisme près, $\grq{D_{\infty}}{H_n}\iso D_n$ ; et dans le second cas, c'est le groupe de cardinal 2, à savoir $C_2\iso \grq{\Z}{2\Z}$.
+\end{enumerate}

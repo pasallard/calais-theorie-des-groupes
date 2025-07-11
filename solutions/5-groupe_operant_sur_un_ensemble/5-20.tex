@@ -1,0 +1,31 @@
+%%% Exercice 5-20
+% PA Sallard
+
+\begin{enumerate}
+  \item Puisque $S_n$ est formé de bijections de $\N_n$ sur lui-même, $S_n$ est $n$-transitif sur $N_n$.
+  \item Rappel : $A_n$ est engendré par les 3-cycles de $S_n$ (exercice 3.26). Et par ailleurs, dans la preuve par récurrence, on étendra de façon naturelle toute permutation de $A_n$ à $A_{n+1}$ (en laissant donc fixe l'entier $n+1$).
+
+  \emph{Initialisation pour }$n=3$ : il s'agit de montrer que $A_3$ est 1-transitif, c'est-à-dire transitif, sur $\N_3$. Soient $i,~j\in \N_3$ : si $i=j$, il suffit de prendre $\sigma = \id$ pour avoir $\sigma(i) = j$. Et si $i\neq j$, on note $k$ le troisième élément de $N_3$ et on considère le 3-cycle $\sigma = (i,j,k)$. Avec le rappel, $\sigma \in A_3$ et on a clairement $\sigma(i) = j$. Dans les deux cas, on a bien obtenu la transitivité de $A_3$ sur $\N_3$.\medskip
+
+  \emph{Hérédité} : supposons qu'il existe $n\geq 3$ tel que $A_n$ est $(n-2)$-transitif sur $\N_n$. Soient $I = (i_1, \ldots, i_{n-2}, i_{n-1})$ et $J = (j_1, \ldots, j_{n-2}, j_{n-1})$ des $(n-1)$-tuples d'entiers distncts de $N_{n+1}$.
+
+  $\bullet$ Cas simple : $n+1\notin I$ et $n+1\notin J$. Par hypothèse de récurrence appliquée aux $(n-2)$-tuples $ (i_1, \ldots, i_{n-2})$ et $(j_1, \ldots, j_{n-2})$ de $N_n$ , $\exists u \in A_n$ tel que $ \forall k\in \N_{n-2},~ u(i_k) = j_k$. L'image $u(i_{n-1})$ est
+  \begin{itemize}
+   \item soit $j_{n-1}$ auquel cas on pose $\sigma = u$ et il n'y a rien de plus à faire ;
+   \item soit l'un des deux éléments de $N_{n+1}\setminus J$, auquel cas on note $c$ le 3-cycle  $(u(i_{n-1}), j_{n-1}, p)$ où $p$ est l'autre élément de $N_{n+1}\setminus J$. On pose alors $\sigma = c \circ u \in A_{n+1}$. Par construction, $\forall k\in \N_{n-2},~ u(i_k) = j_k \notin \supp(c)$ et donc $\sigma(i_k) = j_k$ ; et $\sigma(i_{n-1}) = c(u(i_{n-1})) = j_{n-1}$.
+  \end{itemize}
+  Dans les deux cas, on a bien $\sigma(I) = J$ avec $\sigma\in A_{n+1}$, ce qui établit la $(n-1)$-transitivité de $A_{n+1}$.
+
+  $\bullet$ Cas général : même si $n+1\in I$ ou $n+1\in J$, on se ramène au cas simple par composition préalable ou postérieure par un 3-cycle :
+  \begin{itemize}
+   \item si $n+1\in I$, on note $a,b$ les deux entiers de $N_n$ qui ne sont pas dans $I$ : ainsi l'image $I'$ de $I$ par le 3-cycle $c_1=(n+1, a,b)$ est un $(n-2)$-tuple de $N_n$ ;
+   \item si $n+1 \in J$, on note $c,d$ les deux entiers de $N_n$ qui ne sont pas dans $J$ : ainsi l'image réciproque $J'$ de $J$ par le 3-cycle $c_2=(n+1, c,d)$ est un $(n-2)$-tuple de $N_n$.
+  \end{itemize}
+  Par le cas simple ci-dessus, il existe $\sigma' \in A_{n+1}$ tel que $\sigma'(I') = J'$. En posant $\sigma = c_2^{-1} \circ \sigma' \circ c_1 \in A_{n+1}$, on obtient par construction que $\sigma(I) = J$. CQFD.
+  La récurrence est donc concluante.\medskip
+
+  \emph{$A_n$ n'est pas $(n-1)$-transitif} : en effet, avec la suggestion du texte, la seule permutation que $S_n$ qui envoie $(1, \ldots, n-2, n-1)$ sur $(1, \ldots, n-2, n)$ est la transposition $\tau = (n-1, n)$ qui n'est pas une permutation paire.
+
+
+
+\end{enumerate}
