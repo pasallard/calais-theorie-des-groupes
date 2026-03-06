@@ -1,0 +1,91 @@
+%%% Exercice 5-25
+% PA Sallard
+
+On se donne $H=\Gr{h}$ un groupe cyclique d'ordre 4 et $N=\Gr{x}$ un groupe cyclique d'ordre $2n$, avec $n\geqslant 2$.\\\emph{On notera indistinctement $e$ le neutre d'un groupe, le contexte devant suffire à comprendre à quel groupe il se réfère.}
+\begin{enumerate}
+ \item \emph{Existence d'un tel morphisme} : soit $\varphi \colon H\to \Aut(N)$ défini par 
+ $\begin{cases}\varphi_e = \varphi_{h^2} = \id_N \\ \varphi_h \colon y\in N \mapsto y^{-1}\\ \varphi_{h^3} = \varphi_h \end{cases}$.
+On vérifie facilement que $\forall i,j \in \{0,1,2,3\},~ \varphi(h^i h^j) = \varphi(h^i) \circ  \varphi(h^j)$ donc $\varphi \in \Hom\left(H, \Aut(N)\right)$.
+
+\emph{Unicité d'un tel morphisme} : soit $\psi \in \Hom\left(H, \Aut(N)\right)$ tel que, $\forall y\in N,~ \psi_h(y) = y^{-1}$. On a donc déjà $\psi_h = \varphi_h$, où $\varphi$ est le morphisme défini précédemment.
+Puisque $\psi$ est un morphisme, on a nécessairement $\psi_e = \id_N$ donc là encore $\psi_e = \varphi_e$. Et par propriété de morphisme, $\psi_{h^2} = \psi_h \circ \psi_ h = \id_N = \varphi_{h^2}$ 
+et $\psi_{h^3}= \psi_{h^2} \circ \psi_ h = \psi_h = \varphi_{h} = \varphi_{h^3}$. Les deux morphismes $\psi$ et $\varphi$ coïncident sur leur ensemble de définition donc $\psi=\varphi$, d'où l'unicité.
+
+\end{enumerate}
+
+On définit alors le produit semi-direct $G = N \times_{\varphi} H$. On assimilera $N$ et $H$ à des sous-groupes de $G$ (\emph{voir la remarque du haut de la page 194 du cours}).
+
+\begin{enumerate}[resume]\itemsep 0.1cm
+    \item \emph{Montrons l'inclusion} $\Gr{x^n}\times \Gr{h^2} \subset Z(G)$. L'ensemble $\Gr{x^n}\times \Gr{h^2}$ est l'ensemble à 4 éléments $\{e, x^n, h^2, x^nh^2\}$ et on va montrer que chacun de ces éléments commutent avec tout élément $y=x^ih^j$ de $G$.\\
+    On remarque au préalable que $x^n$ est invariant par n'importe quel morphisme $\varphi_{h^j}$ car il est son propre inverse dans $N$.\\
+    On a $x^n y = x^n x^i h^j = x^{n+i \mod(2n)} h^j$ et $yx^n = x^i (h^j x^n) = x^i \varphi_{h^j}(x^n) h^j = x^ix^n h^j = x^{n+i \mod(2n)} h^j$.\\
+    Puis $h^2 y = h^2 x^i h^j = \varphi_{h^2}(x^i)h^2h^j = x^i h^{2+j \mod(4)}$ et $yh^2 = x^ih^jh^2 = x^i h^{2+j \mod(4)}$.\\
+    Et $x^nh^2 y = x^nh^2x^ih^j = x^n \varphi_{h^2}(x^i)h^2h^j = x^{n+i \mod(2n)} h^{2+j \mod(4)}$ et $yx^nh^2 = x^ih^jx^nh^2 =  x^i \varphi_{h^j}(x^n) h^jh^2 =  x^{n+i \mod(2n)} h^{2+j \mod(4)}$.\\
+    D'où l'inclusion recherchée.\smallskip
+
+    \emph{Montrons l'inclusion réciproque :} soit $z=x^ph^q \in Z(G)$. Il doit commuter avec $h$ : $zh = hz \iff x^ph^q h = h x^p h^q \iff x^p h^{q+1 \mod(4)} = \varphi_{h}(x^p) h^{1+q \mod(4)} \iff x^p = (x^p)^{-1}$ (égalité de la première composante dans l'ensemble produit $G=  N \times_{\varphi} H$).
+    Ainsi $x^p$ doit être son propre inverse dans $N$, d'où $x^p \in \{e, x^n\}$.\\
+    L'élément $z$ doit aussi commuter avec $x$ : $zx = xz \iff x^ph^q x = x x^p h^q \iff x^p \varphi_{h^q}(x) h^q = x^{1+p \mod(2n)} h^q$. Si on avait $q\in \{1,3\}$, on aurait $\varphi_{h^q}(x) = x^{-1}$, ce qui conduirait à $x^{1+p \mod(2n)} = x^{-1+p \mod(2n)}$, et donc à $1 = -1 \mod(2n)$, ce qui est absurde car $n\geq 2$.
+    Donc nécessairement $h^q \in \{e, h^2\}$.\\
+    On en conclut bien que $z$ est nécessairement l'un des 4 éléments $\{e, x^n, h^2, x^nh^2\}$.\smallskip
+
+    Puisque $\Gr{x^n}\iso C_2$ et que $\Gr{h^2} \iso C_2$, on a bien $Z(G) = \Gr{x^n}\times \Gr{h^2}  \iso C_2 \times C_2$, d'après le résultat de l'exercice I.31.b.\smallskip
+
+    \emph{Montrons que } $\grq{G}{Z(G)} \iso D_n$, à l'aide de la proposition 3.74. Notons $\cl{y}$ la classe d'équivalence modulo $Z(G)$ d'un élément $y\in G$ : puisque $G$ est engendré par $x$ et $h$, 
+    $\grq{G}{Z(G)}$ est engendré par $\cl{x}$ et $\cl{h}$. Or $(\cl{x})^n = \cl{x^n} = \cl{e}$ donc $\ordre(\cl{x}) | n$ ; mais on ne peut pas avoir $(\cl{x})^p= \cl{e}$ pour $1\leq p < n$ donc $\ordre(\cl{x}) = n$.\\
+    De la même façon, on établit que $\ordre(\cl{h}) = 2$. Enfin, $\left(\cl{x}\cl{h} \right)^2 = \cl{x}\left(\cl{hx}\right)\cl{h}= \cl{x}\left(\cl{\varphi(x)h}\right)\cl{h} =\cl{x}\, \cl{x^{-1}}\,  \cl{h}\,\cl{h} = \cl{e}$ donc $\ordre(\cl{x}\cl{h}) = 2$. CQFD.
+   
+    \item \emph{Montrons que $K \normal G$}. On remarque que $x^nh^2 \in Z(G)$ donc $\Gr{x^nh^2} \subset Z(G)$ (\textit{voir la remarque 3 page 142}), d'où $K:= \Gr{x^nh^2} \normal G$.\\
+    On peut remarquer que $\left(x^nh^2\right)^2 = e$ donc $K$ est un sous-groupe d'ordre 2.
+
+    Dans la suite, on note $\pi \colon G \to \overline{G}:= \grq{G}{K}$ la surjection canonique.
+
+    \emph{Montrons que $\overline{H} \leq \overline{G}$ et que $\overline{H} \iso C_4$}. Puisque $K\normal G$, alors $HK = KH$ d'après la proposition 4.18 ; et puisque $K\not\subset H$,
+    la proposition 4.28.b assure que $\pi(H) = \grq{HK}{K}$, ce qui montre notamment que $\overline{H}:= \grq{HK}{K} \leq \overline{G}$.\\
+    D'après le deuxième théorème d'isomorphisme 4.34, $\grq{HK}{K} \iso \grq{H}{H\cap K}$ ; mais comme $H\cap K = \{e\}$, il vient que $\grq{HK}{K} \iso H$, \textit{i.e.} $\overline{H} \iso H \iso C_4$.\smallskip
+
+    \emph{Montrons que $\overline{N} \normal \overline{G}$ et que $\overline{N} \iso N\iso C_{2n}$}. Comme ci-dessus, $K\not\subset N \implies \pi(N) = \grq{NK}{K}:=\overline{N} $ est un sous-groupe de $\overline{G}$.
+    Et comme $N\normal G$ (par définition du produit semi-direct $G$), la proposition 4.17 assure que $\pi(N)\normal \pi(G)$, ce qui s'écrit aussi $\overline{N} \normal \overline{G}$.\\
+    Et comme ci-dessus, le théorème d'isomorphisme 4.34 donne $\overline{N} \iso C_{2n}$.\smallskip
+
+    \emph{Montrons que $\overline{G} = \overline{N}\, \overline{H} $, que $\card{\overline{N} \cap\overline{H}} = 2$ et que $\card{\overline{G}} = 4n$}. Le produit semi-direct  $G = N \times_{\varphi} H$ signifie notamment que $G$ peut être considéré comme le groupe produit $NH$ (muni d'une loi "particulière") ; et puisque $\pi$ est un morphisme,
+    on en tire $\pi(G) = \pi(N)\pi(H)$, \textit{i.e.} $\overline{G} = \overline{N}\, \overline{H} $.\\
+    L'égalité (dans $G$) $x^n\, x^nh^2 = h^2$ donne $\pi(x^n) \pi(x^nh^2) = \pi(h^2)$ \textit{i.e.} $\pi(x^n) = \pi(h^2)$ car $x^nh^2 \in \Ker(\pi)$. Or $\pi(x^n)\in \overline{N}$ et $\pi(h^2) \in \overline{H}$ donc $\overline{N}\cap \overline{H}$ contient $\pi(x^n)$ en plus du neutre de $\overline{G}$.\\
+    Mais il n'y a pas d'autre élément dans $\overline{N}\cap \overline{H}$ : en effet, avec les isomorphismes $\overline{N} \iso N$ et $\overline{H} \iso H$, un élément $\tilde{z}$ de $\overline{N}\cap \overline{H}$ est de la forme $\tilde{z}= \pi(x^p) = \pi(h^q)$. 
+    Et on établit facilement que $x^p h^{-q} \in \Ker(\pi) \implies p=q=0 $ ou $p=n$ et $q=2$. Ainsi on a bien $\card{\overline{N} \cap\overline{H}} = 2$.\\
+    Enfin, puisqu'on a $\overline{G} = \overline{N}\, \overline{H} $ avec $\card{\overline{N}}=2n$, $\card{\overline{H}}=4$ et $\card{\overline{N} \cap\overline{H}} = 2$, on déduit du résultat de l'exercice II.3 que 
+    $\card{\overline{G}} = \frac{2n\times 4}{2} = 4n$. 
+
+    \item Remarquons que $K\subset Z(G) \implies \pi(Z(G)) = \grq{Z(G)}{K} := \overline{Z(G)}$ (d'après la proposition 4.28).\\
+    \emph{Montrons que $\overline{Z(G)} = Z\left(\overline{G}\right)$}. Puisque $\pi$ est un morphisme surjectif, le résultat de l'exercice I.16 donne que $\pi(Z(G))$ est un sous-groupe de $Z\left(\overline{G}\right)$.
+    On remarque au passage que, comme $Z(G) = \{e, x^n, h^2, x^nh^2\}$ et que $\pi(x^nh^2) = \pi(e)$ et que $\pi(x^n) = \pi(h^2)$ (voir plus haut),  $\pi(Z(G))$ est le groupe à deux éléments $\{e, \pi(x^n)\}$.\\
+    Montrons l'inclusion réciproque en prenant $\tilde{z} \in  Z\left(\overline{G}\right)$. Puisque $\overline{G} = \overline{N}\, \overline{H},~ \exists (p,q)$ tel que $\tilde{z}=\pi(x^p)\pi(h^q)$.
+    Et $\tilde{z}$ doit commuter avec $\pi(h)\implies \pi(x^ph^q h) = \pi(h x^ph^q) \implies \pi(x^p h^{q+1 \mod(4)}) = \pi(x^{-p}h^{q+1 \mod(4)})$ ; et comme $\Ker(\pi) = \{e, x^nh^2\}$, cette égalité implique que 
+    soit $x^p = x^{-p}$ (c'est-à-dire que $p\in \{0,n\}$), soit que $x^p h^{q+1 \mod(4)} x^nh^2 = x^{-p}h^{q+1 \mod(4)}$, \textit{i.e.} $x^{p+n \mod(2n)} h^{q+3 \mod(4)}= x^{-p}h^{q+1 \mod(4)}$, ce qui est impossible (car $3\neq 1 \mod(4)$). On a donc nécessairement $x^p = e$ ou $x^n$.\\
+    Et on montre de la même manière que le fait que  $\tilde{z}$ doit commuter avec $\pi(x)$ implique que $h^q = e$ ou $h^2$. Au final, $Z\left(\overline{G}\right) \subset \{\pi(e), \pi(x^n), \pi(h^2), \pi(x^nh^2)\} = \{e, \pi(x^n)\} = \pi(Z(G))$. CQFD.\smallskip
+
+     \emph{Déterminons l'ordre de $Z\left(\overline{G}\right)$ et montrons que $\overline{G}$ n'est pas abélien}. La preuve ci-dessus a établi que $Z\left(\overline{G}\right) = \{\pi(e), \pi(x^n), \pi(h^2), \pi(x^nh^2)\}$ donc $\card{Z\left(\overline{G}\right)} = 4$.\\
+     Puisque $n\geq 2$, on a donc $\card{\overline{G}} = 4n > \card{Z\left(\overline{G}\right)}$, ce qui suffit à conclure que $\overline{G}$ n'est pas abélien.\smallskip
+
+    \emph{Montrons que $\grq{\overline{G}}{Z(\overline{G})} \iso \grq{G}{Z(G)}$}. On applique le troisième théorème d'isomorphisme 4.36 : on a bien $K \subset Z(G)$ avec $K\normal G$ et $Z(G) \normal G$ donc ce théorème garantit que 
+    $\grq{G}{Z(G)} \iso \grq{\grq{G}{K}}{\grq{Z(G)}{K}}$, ce qui est bien le résultat attendu.
+
+    \item \emph{Vérifions que $\overline{G}$ n'a qu'un seul élément d'ordre 2 et en déduire que $\overline{G} \notiso D_{2n}$}. Puisque $\left(\pi(x^n)\right)^2 = \pi(x^{2n}) = e$, on a bien au moins un élément d'ordre 2 dans $\overline{G}$. On vérifie que c'est le seul en prenant comme ci-dessus $\tilde{z} = \pi(x^ph^q)$ avec $(p,q) \neq (0,0)$ d'ordre 2 : 
+    $(x^ph^q)^2 \in \Ker(\pi) \implies x^ph^q$ est d'ordre 2 dans $G$ ou bien $(x^ph^q)^2 = x^nh^2$. Le premier cas conduit à $x^p h^q \in \{x^n, h^2\}$ ; et le second cas conduit à $x^{p} \varphi_{h^q}(x^p) h^{2q \mod 4} = x^nh^2$, d'où $q=1$ ; mais alors $\varphi_{h^q}(x^p)=x^{-p}$ et l'égalité $x^{p}x^{-p} = x^n$ est impossible. 
+    Au final, on a donc $x^p h^q \in \{x^n, h^2\}$ et comme $\pi(x^n) = \pi(h^2)$ (cf. plus haut), il vient bien que $\tilde{z}  = \pi(x^n)$.\\
+    Dans $D_{2n}$, il y a deux éléments d'ordre 2, à savoir la symétrie axiale $\sigma$ et le demi-tour $\rho_1^n$. Il est donc impossible que $\overline{G}$ soit isomorphe à $D_{2n}$.\smallskip
+
+    \emph{Montrons que $n=2$ implique que $\overline{G} \iso Q_8$}. Dans le cas où $n=2$, on sait donc que $\overline{G}$ est un groupe non abélien d'ordre $4\times 2 = 8$ et non isomorphe à $D_4$. 
+    La classification des groupes finis (\textit{admis} ?) ne laisse qu'une possibilité : $\overline{G} \iso Q_8$.
+
+    \item On note désormais $\overline{G} = Q_{4n}$. Compte-tenu des isomorphismes $\overline{N} \iso N$ et  $\overline{H} \iso H$, on peut bien identifier $\overline{N}$ à $N$ et $\overline{H}$ à $H$.
+    Et on avait $\overline{G} = \overline{N}\, \overline{H} $ : en identifiant $\pi(x)$ à $x$ et $\pi(h)$ à $h$, on en déduit donc que $Q_{4n}$ est engendré par ces deux éléments $x$ et $h$ qui vérifient :
+    \begin{itemize}
+        \item $\ordre(x) = 2n$ ~ et ~ $\ordre(h) = 4$ (comme dans $G$) ;
+        \item $x^nh^{-2} = e$ car $\pi(x^nh^{-2}) = \pi(x^nh^2) = e$ ;
+        \item $x^{-1} = hxh^{-1}$ car, dans $G$, $(h x)h^{-1} = (x^{-1}h)h^{-1}= x^{-1}$ et l'égalité se prolonge dans $\overline{G}$ par application du morphisme $\pi$.
+    \end{itemize}
+
+
+\end{enumerate}
+
